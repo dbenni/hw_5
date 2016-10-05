@@ -146,6 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Desktop\vs2015\std_lib_facilities.h" />
+    <ClInclude Include="robo_head.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="robo_head.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
