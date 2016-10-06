@@ -1,7 +1,8 @@
-#include "std_lib_facilities.h"
-#ifndef _ROBO_BATTERY_H
-#define _ROBO_BATTERY_H 2016
-class robo_battery
+#include"std_lib_facilities.h"
+#include"robo_battery.h"
+#ifndef _ROBO_TORSO_H
+#define _ROBO_TORSO_H 2016
+class robo_torso
 {
 public:
 	void setname(string n);
@@ -9,20 +10,24 @@ public:
 	void setweight(string w);
 	void setdescrip(char* x);
 	void setcost(double c);
-	void setenergy(string e);
-	string getenergy();
 	string getname();
 	string getpartn();
 	string getweight();
 	char* getdescrip();
 	double getcost();
+	void setbatn(int i);
+	int getbatn();
+
 
 
 
 private:
-	string name, partn, weight,energy;
+	string name, partn, weight;
 	double cost;
 	char descrip[250];
+	int batnum;
+	robo_battery one,two,three;
 
 };
 #endif
+
