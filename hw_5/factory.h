@@ -7,7 +7,7 @@
 class factory
 {
 public:
-	int factory_menu();
+	void factory_menu();
 	void add_head(robo_head x);
 	void add_arm(robo_arm a);
 	void add_torso(robo_torso t);

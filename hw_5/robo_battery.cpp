@@ -1,5 +1,6 @@
 #include "robo_battery.h"
 #include "std_lib_facilities.h"
+#include <string.h>
 
 
 
@@ -21,7 +22,7 @@ void robo_battery::setweight(string w)
 
 void robo_battery::setdescrip(char * x)
 {
-	strcpy(descrip, x);
+	strcpy_s(descrip, x);
 }
 
 void robo_battery::setcost(double c)

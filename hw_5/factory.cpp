@@ -4,23 +4,25 @@
 #include "robo_battery.h"
 #include "robo_motor.h"
 #include "robo_head.h"
+#include "std_lib_facilities.h"
 
 
 
 
-int factory::factory_menu()
+void factory::factory_menu()
 {
-	int answer;
+	int answer3 = 0;
+
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
-	while (answer != 6) {
+	while (answer3 != 6) {
 	cout << "1 build head" << "\n";
 	cout << "2 build arm" << "\n";
 	cout << "3 build battery" << "\n";
 	cout << "4 build motor" << "\n";
 	cout << "5 build torso" << "\n";
 	cout << "6 exit" << "\n";
-	cin >> answer;
-	build_robopart(answer);
+	cin >> answer3;
+	build_robopart(answer3);
 }
 }
 
@@ -52,10 +54,10 @@ void factory::add_batt(robo_battery b)
 void factory::build_robopart(int num)
 {
 	robo_battery t, t2;
-	int answer, answer2;
+	int answer = 0, answer2;
 	string an1, an2, an3, an4, an5, an6;
 	double x;
-	char* d;
+	char d[250];
 	if (num == 1) {
 	
 
@@ -179,7 +181,7 @@ void factory::make_batt()
 {
 	string an1, an2, an3, an4, an5;
 	double c;
-	char* x;
+	char x[250];
 	cout << "pleas enter name of robot battery(no spaces)" << "\n";
 	cin >> an1;
 	cout << "pleas enter part number of robot battery(no spaces use numbers)" << "\n";
@@ -207,7 +209,7 @@ void factory::set_batt(robo_battery t)
 {
 	string an1, an2, an3, an4, an5;
 	double c;
-	char* x;
+	char x[250];
 	cout << "pleas enter name of robot battery(no spaces)" << "\n";
 	cin >> an1;
 	cout << "pleas enter part number of robot battery(no spaces use numbers)" << "\n";
