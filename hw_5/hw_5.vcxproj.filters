@@ -33,6 +33,9 @@
     <ClInclude Include="robo_torso.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="robo_head.cpp">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="robo_torso.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

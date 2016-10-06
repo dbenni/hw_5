@@ -17,7 +17,7 @@ public:
 	double getcost();
 	void setbatn(int i);
 	int getbatn();
-
+	robo_battery one, two, three;
 
 
 
@@ -26,7 +26,7 @@ private:
 	double cost;
 	char descrip[250];
 	int batnum;
-	robo_battery one,two,three;
+	
 
 };
 #endif

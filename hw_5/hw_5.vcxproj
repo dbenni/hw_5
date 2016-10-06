@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Desktop\vs2015\std_lib_facilities.h" />
+    <ClInclude Include="factory.h" />
     <ClInclude Include="robo_arm.h" />
     <ClInclude Include="robo_battery.h" />
     <ClInclude Include="robo_head.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="robo_torso.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="factory.cpp" />
     <ClCompile Include="robo_arm.cpp" />
     <ClCompile Include="robo_battery.cpp" />
     <ClCompile Include="robo_head.cpp" />
