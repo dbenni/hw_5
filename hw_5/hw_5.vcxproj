@@ -147,10 +147,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Desktop\vs2015\std_lib_facilities.h" />
+    <ClInclude Include="robo_battery.h" />
     <ClInclude Include="robo_head.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="robo_battery.cpp" />
     <ClCompile Include="robo_head.cpp" />
+    <ClCompile Include="robo_head_test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

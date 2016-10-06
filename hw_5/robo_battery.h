@@ -1,11 +1,7 @@
 #include "std_lib_facilities.h"
-
-#ifndef _ROBO_HEAD_H
-#define _ROBO_HEAD_H 2016
-
-
-
-class robo_head
+#ifndef _ROBO_BATTERY_H
+#define _ROBO_BATTERY_H 2016
+class robo_battery
 {
 public:
 	void setname(string n);
@@ -19,13 +15,12 @@ public:
 	char* getdescrip();
 	double getcost();
 
-	
+
 
 private:
-	string name, partn, weight;
+	string name, partn, weight,energy;
 	double cost;
 	char descrip[250];
-
 
 };
 #endif

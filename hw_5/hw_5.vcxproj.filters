@@ -21,9 +21,18 @@
     <ClInclude Include="robo_head.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="robo_battery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="robo_head.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="robo_head_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="robo_battery.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
