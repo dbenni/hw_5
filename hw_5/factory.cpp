@@ -14,6 +14,7 @@ void factory::factory_menu()
 	int answer3 = 0;
 
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
+	while (answer3 != 6) {
 	cout << "1 build head" << "\n";
 	cout << "2 build arm" << "\n";
 	cout << "3 build battery" << "\n";
@@ -22,7 +23,7 @@ void factory::factory_menu()
 	cout << "6 exit" << "\n";
 	cin >> answer3;
 	build_robopart(answer3);
-
+}
 }
 
 void factory::add_head(robo_head x)
@@ -105,7 +106,6 @@ void factory::build_robopart(int num)
 			r_head.setpartn(an2);
 			add_head(r_head);
 			cout << "added head" << "\n";
-			
 	}
 	else if (num == 4) {
 		

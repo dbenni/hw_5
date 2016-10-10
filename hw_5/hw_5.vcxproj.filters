@@ -36,7 +36,7 @@
     <ClInclude Include="factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="robot_model.h">
+    <ClInclude Include="robo_model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClCompile Include="factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="robot_model.cpp">
+    <ClCompile Include="robo_model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
