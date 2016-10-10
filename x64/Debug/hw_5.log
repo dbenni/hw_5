@@ -1,0 +1,17 @@
+﻿  robo_torso.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_torso.cpp': No such file or directory
+  robo_motor.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_motor.cpp': No such file or directory
+  robo_head_test.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_head_test.cpp': No such file or directory
+  robo_head.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_head.cpp': No such file or directory
+  robo_battery.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_battery.cpp': No such file or directory
+  robo_arm.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robo_arm.cpp': No such file or directory
+  robot_model.cpp
+c1xx : fatal error C1083: Cannot open source file: 'robot_model.cpp': No such file or directory
+  factory.cpp
+c1xx : fatal error C1083: Cannot open source file: 'factory.cpp': No such file or directory
+  Generating Code...
