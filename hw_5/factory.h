@@ -4,6 +4,7 @@
 #include"robo_head.h"
 #include"robo_torso.h"
 #include"robo_motor.h"
+#include "robo_model.h"
 class factory
 {
 public:
@@ -16,6 +17,8 @@ public:
 	void build_robopart(int num);
 	void make_batt();
 	void set_batt(robo_battery t);
+	void build_model();
+	void list_parts();
 
 private:
 	vector<robo_arm> arm;
@@ -23,16 +26,19 @@ private:
 	vector <robo_head> head;
 	vector <robo_torso> torso;
 	vector <robo_motor> motor;
-	int arm_tot = 0;
-	int batt_tot = 0;
-	int head_tot = 0;
-	int torso_tot = 0;
-	int motor_tot = 0;
+	vector <robot_model> models;
+	int arm_tot{ 0 };
+	int batt_tot{ 0 };
+	int head_tot{ 0 };
+	int torso_tot{ 0 };
+	int motor_tot{ 0 };
+	int model_tot{ 0  };
 	robo_arm r_arm;
 	robo_battery r_batt;
 	robo_head r_head;
 	robo_motor r_motor;
 	robo_torso r_torso;
+	robot_model temp, temp2;
 
 };
 

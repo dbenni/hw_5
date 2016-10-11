@@ -15,9 +15,9 @@ void factory::factory_menu()
 
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
 	while (answer3 != 6) {
-	cout << "1 build head" << "\n";
-	cout << "2 build arm" << "\n";
-	cout << "3 build battery" << "\n";
+	cout << "1 build arm: " << "\n";
+	cout << "2 build battery: " << "\n";
+	cout << "3 build head" << "\n";
 	cout << "4 build motor" << "\n";
 	cout << "5 build torso" << "\n";
 	cout << "6 exit" << "\n";
@@ -81,6 +81,7 @@ void factory::build_robopart(int num)
 	r_arm.setpartn(an2);
 	add_arm(r_arm);
 	cout << "added arm" << "\n";
+	arm_tot++;
 	}
 	else if (num == 2) {
 
@@ -106,6 +107,7 @@ void factory::build_robopart(int num)
 			r_head.setpartn(an2);
 			add_head(r_head);
 			cout << "added head" << "\n";
+			head_tot++;
 	}
 	else if (num == 4) {
 		
@@ -133,6 +135,7 @@ void factory::build_robopart(int num)
 		r_motor.setmph(an5);
 		add_motor(r_motor);
 		cout << "added motor" << "\n";
+		motor_tot++;
 	}
 	else if (num == 5) {
 		
@@ -228,4 +231,13 @@ void factory::set_batt(robo_battery t)
 	t.setenergy(an4);
 	t.setweight(an3);
 	t.setpartn(an2);
+}
+
+void factory::build_model()
+{
+
+}
+
+void factory::list_parts()
+{ 
 }
