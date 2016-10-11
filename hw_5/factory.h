@@ -18,7 +18,19 @@ public:
 	void make_batt();
 	void set_batt(robo_battery t);
 	void build_model();
-	void list_parts();
+	int getarmtot();
+	void listarm();
+	void listbatt();
+	void listhead();
+	void listtors();
+	void listmotor();
+	void listmodel();
+	int getheadtot();
+	int getbatttot();
+	int gettorsotot();
+	int getmotor_tot();
+	int getmodeltot();
+	void list_parts(int);
 
 private:
 	vector<robo_arm> arm;

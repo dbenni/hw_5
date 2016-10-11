@@ -76,3 +76,13 @@ double robo_arm::getcost()
 	c = cost;
 	return c;
 }
+
+void robo_arm::armdump()
+{
+	cout << "Title  " << name << "\n" ;
+	cout << "Part Number  " << partn << "\n";
+	cout << "Cost  " << cost << "\n";
+	cout << "Power  " << Power << "\n";
+	cout << "Weight " << weight << "\n";
+	cout <<"Short Description  " << "\n" <<descrip << "\n"; 
+}

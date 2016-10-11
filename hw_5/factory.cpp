@@ -238,6 +238,64 @@ void factory::build_model()
 
 }
 
+int factory::getarmtot()
+{
+	return 0;
+}
+
+void factory::listarm()
+{
+}
+
+void factory::listbatt()
+{
+}
+
+void factory::listhead()
+{
+}
+
+void factory::listtors()
+{
+}
+
+void factory::listmotor()
+{
+}
+
+void factory::listmodel()
+{
+}
+
+int factory::getheadtot()
+{
+	return 0;
+}
+
+int factory::getbatttot()
+{
+	return 0;
+}
+
+int factory::gettorsotot()
+{
+	return 0;
+}
+
+int factory::getmotor_tot()
+{
+	return 0;
+}
+
+int factory::getmodeltot()
+{
+	return 0;
+}
+
+void factory::list_parts(int)
+{
+}
+
 void factory::list_parts()
 { 
 }

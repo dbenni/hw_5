@@ -26,13 +26,17 @@ public:
 	double getprice();
 	double getprofit();
 	robo_arm getarm();
+	robo_arm getarm2();
 	robo_battery getbattery();
 	robo_head gethead();
 	robo_motor getmotor();
 	robo_torso gettorso();
+	void modeldump();
+	void modelpartsdump();
+
 
 private:
-	string name[200], id_num[200];
+	string name[200 ], id_num[200];
 	double price;
 	double sim;
 	double total_cost;
