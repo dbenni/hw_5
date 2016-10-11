@@ -7,7 +7,7 @@
 #include "std_lib_facilities.h"
 
 
-
+   
 
 void factory::factory_menu()
 {
@@ -240,15 +240,31 @@ void factory::build_model()
 
 int factory::getarmtot()
 {
-	return 0;
+	int armx;
+	armx = arm_tot;
+	return armx;
 }
 
 void factory::listarm()
-{
+{   
+	int x,i;
+	x = getarmtot();
+	for (i = 0; i < x; i++) {
+		cout << "---------------------------------------------" << "\n";
+		arm[i].armdump();
+		cout << "---------------------------------------------" << "\n";
+	}
 }
 
 void factory::listbatt()
 {
+	int b, i;
+	b = getbatttot();
+	for (i = 0; i < b; i++) {
+		cout << "---------------------------------------------" << "\n";
+		battery[b].battdump();
+		cout << "---------------------------------------------" << "\n";
+	}
 }
 
 void factory::listhead()
@@ -263,39 +279,93 @@ void factory::listmotor()
 {
 }
 
+void factory::listtors()
+{
+	int t, i;
+	t = gettorsotot();
+	for (i = 0; i < t; i++) {
+		cout << "---------------------------------------------" << "\n";
+		torso[i].torsodump();
+		cout << "---------------------------------------------" << "\n";
+}
+
+
 void factory::listmodel()
 {
 }
 
+void factory::listhead()
+{
+	int h, i;
+	h = getheadtot();
+	for (i = 0; i < h; i++) {
+		cout << "---------------------------------------------" << "\n";
+		head[i].headdump();
+		cout << "---------------------------------------------" << "\n";
+}
+
+
+
+void factory::listhead()
+{
+	int h, i;
+	h = getheadtot();
+	for (i = 0; i < h; i++) {
+		cout << "---------------------------------------------" << "\n";
+		head[i].headdump();
+		cout << "---------------------------------------------" << "\n";
+}
+
+
+
+
+void factory::listmotor()
+{
+	int x, i;
+	x = model_tot;
+	for (i = 0; i < x; i++) {
+		cout << "---------------------------------------------" << "\n";
+		motor[i].motordump();
+		cout << "---------------------------------------------" << "\n";
+}
+
+
 int factory::getheadtot()
 {
-	return 0;
+	int h;
+	h = head_tot;
+	return h;
 }
 
 int factory::getbatttot()
 {
-	return 0;
+	int b;
+	b = batt_tot;
+	return b;
 }
 
 int factory::gettorsotot()
 {
-	return 0;
+	int tor;
+	tor = tors_tot;
+	return tor;
 }
 
 int factory::getmotor_tot()
 {
-	return 0;
+	int mot;
+	mot = motor_tot;
+	return mot;
 }
 
 int factory::getmodeltot()
 {
-	return 0;
+	int answer;
+	answer = model_tot;
+	return answer;  
 }
 
 void factory::list_parts(int)
 {
 }
 
-void factory::list_parts()
-{ 
-}
