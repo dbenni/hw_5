@@ -7,7 +7,7 @@
 
 void robo_battery::setname(string n)
 {
-	name = n;
+	name = n;  
 }
 
 void robo_battery::setpartn(string pn)
@@ -76,4 +76,14 @@ double robo_battery::getcost()
 	double c;
 	c = cost;
 	return c;
+}
+
+void robo_battery::battdump()
+{
+	cout << " Battery Name  " << name << "\n";
+	cout << "Part Number  " << partn << "\n";
+	cout << "Cost  " << cost << "\n";
+	cout << "Energy  " << energy << "\n";
+	cout << "Weight  " << weight << "\n";
+	cout << "Short Description  " << "\n" << descrip << "\n";
 }

@@ -5,6 +5,8 @@
 #include"robo_torso.h"
 #include"robo_motor.h"
 #include "robo_model.h"
+#ifndef _FACTORY_H
+#define _FACTORY_H 2016
 class factory
 {
 public:
@@ -24,13 +26,13 @@ public:
 	void listhead();
 	void listtors();
 	void listmotor();
-	void listmodel();
+	void listmodel(); 
 	int getheadtot();
 	int getbatttot();
 	int gettorsotot();
 	int getmotor_tot();
 	int getmodeltot();
-	void list_parts(int);
+	void list_parts(string test);
 
 private:
 	vector<robo_arm> arm;
@@ -42,15 +44,16 @@ private:
 	int arm_tot{ 0 };
 	int batt_tot{ 0 };
 	int head_tot{ 0 };
-	int torso_tot{ 0 };
+	int tors_tot{ 0 };
 	int motor_tot{ 0 };
-	int model_tot{ 0  };
-	robo_arm r_arm;
-	robo_battery r_batt;
+	int model_tot{ 0  }; 
+	robo_arm r_arm,r_arm2;
+	robo_battery r_batt; 
 	robo_head r_head;
 	robo_motor r_motor;
 	robo_torso r_torso;
-	robot_model temp, temp2;
-
+	robot_model temp, temp2; 
+	  
 };
+#endif
 

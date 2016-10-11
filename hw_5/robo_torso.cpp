@@ -73,7 +73,7 @@ void robo_torso::setbatn(int i)
 int robo_torso::getbatn()
 {
 	int i;
-	i = batnum;
+	i = batnum; 
 	return i;
 }
 

@@ -10,7 +10,7 @@ public:
 	void setweight(string w);
 	void setdescrip(char* x);
 	void setcost(double c);
-	void setpower(string e);
+	void setpower(string e); 
 	void setmph(string m);
 	string getmph();
 	string getpower();
@@ -19,6 +19,7 @@ public:
 	string getweight();
 	char* getdescrip();
 	double getcost();
+	void motordump();
 
 
 

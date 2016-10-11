@@ -267,17 +267,11 @@ void factory::listbatt()
 	}
 }
 
-void factory::listhead()
-{
-}
 
-void factory::listtors()
-{
-}
 
-void factory::listmotor()
-{
-}
+
+
+
 
 void factory::listtors()
 {
@@ -287,12 +281,21 @@ void factory::listtors()
 		cout << "---------------------------------------------" << "\n";
 		torso[i].torsodump();
 		cout << "---------------------------------------------" << "\n";
+	}
 }
-
 
 void factory::listmodel()
 {
+	int siz;
+	int i;
+	siz = getmodeltot();
+	for (i = 0; i < siz; i++)
+	   {
+		models[i].modeldump();
+	   }
 }
+  
+
 
 void factory::listhead()
 {
@@ -302,21 +305,9 @@ void factory::listhead()
 		cout << "---------------------------------------------" << "\n";
 		head[i].headdump();
 		cout << "---------------------------------------------" << "\n";
+	}
+
 }
-
-
-
-void factory::listhead()
-{
-	int h, i;
-	h = getheadtot();
-	for (i = 0; i < h; i++) {
-		cout << "---------------------------------------------" << "\n";
-		head[i].headdump();
-		cout << "---------------------------------------------" << "\n";
-}
-
-
 
 
 void factory::listmotor()
@@ -327,8 +318,8 @@ void factory::listmotor()
 		cout << "---------------------------------------------" << "\n";
 		motor[i].motordump();
 		cout << "---------------------------------------------" << "\n";
+	}
 }
-
 
 int factory::getheadtot()
 {
@@ -365,7 +356,18 @@ int factory::getmodeltot()
 	return answer;  
 }
 
-void factory::list_parts(int)
+void factory::list_parts(string test)
 {
+	string ansd;
+	int size,i;
+	size = model_tot;
+	for (i = 0; i < size; i++) 
+	   {
+		ansd = models[i].getid();
+		if (ansd == test)
+		{
+			models[i].modelpartsdump();
+		}
+	   }
 }
 

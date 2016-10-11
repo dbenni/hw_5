@@ -10,7 +10,7 @@ class robo_head
 public:
 	void setname(string n);
 	void setpartn(string pn);
-	void setweight(string w);
+	void setweight(string w); 
 	void setdescrip(char* x);
 	void setcost(double c);
 	string getname();
@@ -18,6 +18,7 @@ public:
 	string getweight();
 	char* getdescrip();
 	double getcost();
+	void headdump();
 
 	
 

@@ -8,7 +8,7 @@ public:
 	void setpartn(string pn);
 	void setweight(string w);
 	void setdescrip(char* x);
-	void setcost(double c);
+	void setcost(double c); 
 	void setpower(string e);
 	string getpower();
 	string getname();
@@ -16,6 +16,7 @@ public:
 	string getweight();
 	char* getdescrip();
 	double getcost();
+	void armdump();
 
 
 

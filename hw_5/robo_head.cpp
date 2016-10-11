@@ -1,5 +1,5 @@
 #include "robo_head.h"
-#include "std_lib_facilities.h"
+#include "std_lib_facilities.h" 
 
 void robo_head::setname(string n)
 {
@@ -60,4 +60,13 @@ double robo_head::getcost()
 	double c;
 	c = cost;
 	return c;
+}
+
+void robo_head::headdump()
+{
+	cout << "Head Unit Name: " << name << "\n";
+	cout << "Part Number  " << partn << "\n";
+	cout << "Cost  " << cost << "\n";
+	cout << "Weight  " << weight << "\n";
+	cout << "Short Description  " << "\n" << descrip << "\n";
 }

@@ -67,7 +67,7 @@ char * robo_arm::getdescrip()
 {
 	char* a = descrip;
 
-	return a;
+	return a; 
 }
 
 double robo_arm::getcost()

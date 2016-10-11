@@ -10,7 +10,7 @@ public:
 	void setweight(string w);
 	void setdescrip(char* x);
 	void setcost(double c);
-	string getname();
+	string getname();  
 	string getpartn();
 	string getweight();
 	char* getdescrip();
@@ -18,6 +18,7 @@ public:
 	void setbatn(int i);
 	int getbatn();
 	robo_battery one, two, three;
+	void torsodump();
 
 
 

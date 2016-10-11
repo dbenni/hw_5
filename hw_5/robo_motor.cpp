@@ -4,7 +4,7 @@
 
 void robo_motor::setname(string n)
 {
-	name = n;
+	name = n; 
 }
 
 void robo_motor::setpartn(string pn)
@@ -82,4 +82,15 @@ double robo_motor::getcost()
 	double c;
 	c = cost;
 	return c;
+}
+
+void robo_motor::motordump()
+{
+	cout << " Loco Motor Name:  " << name << "\n";
+	cout << "Part Number:  " << partn << "\n";
+	cout << "Cost:  " << cost << "\n";
+	cout << "Power:  " << Power << "\n";
+	cout << "Max speed:  " << MPH << "\n";
+	cout << "Weight:  " << weight << "\n";
+	cout << "Sort Discription:  " << "\n" << descrip << "\n";
 }
