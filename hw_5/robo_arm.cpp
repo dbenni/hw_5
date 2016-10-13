@@ -18,9 +18,9 @@ void robo_arm::setweight(string w)
 	weight = w;
 }
 
-void robo_arm::setdescrip(char * x)
+void robo_arm::setdescrip(string x[350])
 {
-	strcpy_s(descrip, x);
+	descrip[350] = x[350];
 }
 
 void robo_arm::setcost(double c)
