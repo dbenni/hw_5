@@ -7,14 +7,14 @@ void robo_motor::setname(string n)
 	name = n; 
 }
 
-void robo_motor::setpartn(string pn)
+void robo_motor::setpartn(stri ng pn)
 {
-	partn = pn;
+	partn = pn; 
 }
 
 void robo_motor::setweight(string w)
 {
-	weight = w;
+	weight = w;  
 }
 
 void robo_motor::setdescrip(char * x)

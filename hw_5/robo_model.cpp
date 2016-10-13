@@ -7,19 +7,21 @@ void robot_model::setname()
 {
 	cout << "Pleas Enter Name of the robot model." << "\n";
 	cin >> name[200];
-	
+	  
 }
 
 void robot_model::setid()
 {
 	cout << "Pleas Enter ID number for robot model" << "\n";
-
+	 
 	cin >> id_num[200];
 } 
 
 void robot_model::setprice()
 {
-	cout << " Pleas Enter the price of this model." << "\n";
+	double c;
+	c = getcost();
+	cout << " Pleas Enter the price of this model.  " <<"not total cost is  " << c << "\n";
 	cin >> price;
 }
 

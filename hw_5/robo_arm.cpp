@@ -1,5 +1,8 @@
 #include "robo_arm.h"
 #include "std_lib_facilities.h"
+#include <iostream>
+#include <string>
+#include <string.h> 
 
 
 
@@ -10,7 +13,7 @@ void robo_arm::setname(string n)
 
 void robo_arm::setpartn(string pn)
 {
-	partn = pn;
+	partn = pn; 
 }
 
 void robo_arm::setweight(string w)
@@ -18,9 +21,9 @@ void robo_arm::setweight(string w)
 	weight = w;
 }
 
-void robo_arm::setdescrip(string x[350])
+void robo_arm::setdescrip(string x)
 {
-	descrip[350] = x[350];
+	descrip = x;
 }
 
 void robo_arm::setcost(double c)
@@ -63,11 +66,12 @@ string robo_arm::getweight()
 	return w;
 }
 
-char * robo_arm::getdescrip()
-{
-	char* a = descrip;
-
-	return a; 
+string robo_arm::getdescrip()
+{   
+	string x;
+	x = descrip;
+	 
+	return x; 
 }
 
 double robo_arm::getcost()

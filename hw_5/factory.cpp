@@ -1,10 +1,12 @@
-#include "factory.h"
+ #include "factory.h"
 #include "robo_torso.h"
 #include "robo_arm.h"
 #include "robo_battery.h"
 #include "robo_motor.h"
 #include "robo_head.h"
 #include "std_lib_facilities.h"
+#include <iostream>
+#include <string>
 
 
    
@@ -51,13 +53,18 @@ void factory::add_batt(robo_battery b)
 	battery.push_back(b);
 }
 
+void factory::add_model(robot_model r)
+{
+	models.push_back(r);
+}
+
 void factory::build_robopart(int num)
 {
 	robo_battery t, t2;
 	int answer = 0, answer2;
 	string an1, an2, an3, an4, an5, an6;
 	double x;
-	char d[250];
+	char d[300];
 	if (num == 1) {
 	
 
@@ -71,10 +78,11 @@ void factory::build_robopart(int num)
 	cin >> an4;
 	cout << "pleas enter cost of robot arm(please type numbers)" << "\n";
 	cin >> x;
-	cout << "pleas enter description of robot arm" << "\n";
-	cin >> d;
+	cout << "Enter arm description:  " << "\n";
+	cin.getline(d, 300);
+	an6 = an6 + d;
+	r_arm.setdescrip(an6);
 	r_arm.setcost(x);
-	r_arm.setdescrip(d);
 	r_arm.setname(an1);
 	r_arm.setpower(an4);
 	r_arm.setweight(an3);
@@ -197,6 +205,7 @@ void factory::make_batt()
 	cin >> c;
 	cout << "pleas enter description of robot battery" << "\n";
 	cin >> x;
+
 	r_batt.setcost(c);
 	r_batt.setdescrip(x);
 	r_batt.setname(an1);
@@ -206,6 +215,176 @@ void factory::make_batt()
 	add_batt(r_batt);
 	cout << "added arm" << "\n";
 
+}
+
+void factory::make_arm()
+{
+	robo_battery t, t2;
+	int answer = 0;
+	string an1, an2, an3, an4, an5, an6;
+	double x;
+	char d[300];
+
+
+	cout << "pleas enter name of robot arm(no spaces)" << "\n";
+	cin >> an1;
+	cout << "pleas enter part number of robot arm(no spaces use numbers)" << "\n";
+	cin >> an2;
+	cout << "pleas enter weight of robot arm(no spaces use numbers)" << "\n";
+	cin >> an3;
+	cout << "pleas enter power of robot arm(no spaces use numbers)" << "\n";
+	cin >> an4;
+	cout << "pleas enter cost of robot arm(please type numbers)" << "\n";
+	cin >> x;
+	cout << "Enter arm description:  " << "\n";
+	cin.getline(d, 300);
+	an6 = an6 + d;
+	r_arm.setcost(x);
+	r_arm.setname(an1);
+	r_arm.setpower(an4);
+	r_arm.setweight(an3);
+	r_arm.setpartn(an2);
+	r_arm.setdescrip(an6);
+	add_arm(r_arm);
+	cout << "added arm" << "\n";
+	arm_tot++;
+
+	cout << "pleas enter name of robot arm2(no spaces)" << "\n";
+	cin >> an1;
+	cout << "pleas enter part number of robot arm(no spaces use numbers)" << "\n";
+	cin >> an2;
+	cout << "pleas enter weight of robot arm(no spaces use numbers)" << "\n";
+	cin >> an3;
+	cout << "pleas enter power of robot arm2(no spaces use numbers)" << "\n";
+	cin >> an4;
+	cout << "pleas enter cost of robot arm2(please type numbers)" << "\n";
+	cin >> x;
+	cout << "Enter arm description:  " << "\n";
+	cin.getline(d, 300);
+	an6 = an6 + d;
+	cout << "test1";
+	cout << an6
+	r_arm2.setdescrip(an6);
+	r_arm2.setcost(x);
+	r_arm2.setname(an1);
+	r_arm2.setpower(an4);
+	r_arm2.setweight(an3);
+	r_arm2.setpartn(an2);
+	add_arm(r_arm2);
+	cout << "added arm2" << "\n";
+	arm_tot++;
+	temp.setarm(r_arm, r_arm2);
+
+}
+
+
+void factory::make_head()
+{
+	robo_battery t, t2;
+	int answer = 0;
+	string an1, an2, an3, an4, an5, an6;
+	double x;
+	char d[250];
+
+	cout << "pleas enter name of robot head(no spaces)" << "\n";
+	cin >> an1;
+	cout << "pleas enter part number of robot head(no spaces use numbers)" << "\n";
+	cin >> an2;
+	cout << "pleas enter weight of robot head(no spaces use numbers)" << "\n";
+	cin >> an3;
+	cout << "pleas enter cost of robot head(please type numbers)" << "\n";
+	cin >> x;
+	cout << "pleas enter description of robot head" << "\n";
+	cin >> d;
+	r_head.setcost(x);
+	r_head.setdescrip(d);
+	r_head.setname(an1);
+	r_head.setweight(an3);
+	r_head.setpartn(an2);
+	add_head(r_head);
+	temp.sethead(r_head);
+	cout << "added head" << "\n";
+	head_tot++;
+}
+
+void factory::make_motor()
+{
+	robo_battery t, t2;
+	int answer = 0;
+	string an1, an2, an3, an4, an5, an6;
+	double x;
+	char d[250];
+
+	cout << "pleas enter name of robot motor(no spaces)" << "\n";
+	cin >> an1;
+	cout << "pleas enter part number of robot motor(no spaces use numbers)" << "\n";
+	cin >> an2;
+	cout << "pleas enter weight of robot motor(no spaces use numbers)" << "\n";
+	cin >> an3;
+	cout << "pleas enter power of robot motor(no spaces use numbers)" << "\n";
+	cin >> an4;
+	cout << "pleas enter cost of robot motor(please type numbers)" << "\n";
+	cin >> x;
+	cout << " pleas type in max speed of motor(use number)" << "\n";
+	cin >> an5;
+	cout << "pleas enter description of robot motor" << "\n";
+	cin >> d;
+	r_motor.setcost(x);
+	r_motor.setdescrip(d);
+	r_motor.setname(an1);
+	r_motor.setpower(an4);
+	r_motor.setweight(an3);
+	r_motor.setpartn(an2);
+	r_motor.setmph(an5);
+	add_motor(r_motor);
+	temp.setmotor(r_motor);
+	cout << "added motor" << "\n";
+	motor_tot++;
+}
+
+
+void factory::make_torso()
+{
+	robo_battery t, t2;
+	int answer = 0, answer2;
+	string an1, an2, an3, an4, an5, an6;
+	double x;
+	char d[250];
+
+	cout << "pleas enter name of robot torso(no spaces)" << "\n";
+	cin >> an1;
+	cout << "pleas enter part number of robot torso(no spaces use numbers)" << "\n";
+	cin >> an2;
+	cout << "pleas enter weight of robot torso(no spaces use numbers)" << "\n";
+	cin >> an3;
+	cout << "pleas enter 1 2 or 3 for number of batterys in torso of robot(no spaces use numbers)" << "\n";
+	cin >> answer2;
+	cout << "pleas enter cost of robot torso(please type numbers)" << "\n";
+	cin >> x;
+	cout << " pleas type in max speed of torso(use number)" << "\n";
+	cin >> an5;
+	cout << "pleas enter description of robot torso" << "\n";
+	cin >> d;
+	r_torso.setcost(x);
+	r_torso.setdescrip(d);
+	r_torso.setname(an1);
+	r_torso.setbatn(answer2);
+	r_torso.setweight(an3);
+	r_torso.setpartn(an2);
+	if (answer2 == 1) {
+		set_batt(r_torso.one);
+	}
+	else if (answer2 == 2) {
+		set_batt(r_torso.one);
+		set_batt(r_torso.two);
+	}
+	else if (answer2 == 3) {
+		set_batt(r_torso.one);
+		set_batt(r_torso.two);
+		set_batt(r_torso.three);
+	}
+	torso.push_back(r_torso);
+	cout << "added torso" << "\n";
 }
 
 void factory::set_batt(robo_battery t)
@@ -234,7 +413,125 @@ void factory::set_batt(robo_battery t)
 }
 
 void factory::build_model()
-{
+{ 
+	string ar, ar2, mot, tor, hea,fin;
+	int ans1,ans2, ans3, ans4;
+	cout << "Pleas type the number next to the operation you would like to perforom:" << "\n";
+	cout << "1: add arm from list" << "\n";
+	cout << "2: build new arm for model" << "\n";
+	cin >> ans1;
+	if(ans1 == 1)
+	{
+		ans2 = getarmtot();
+		if (ans2 == 0)
+		{
+			cout << "Sorry no arms are in stock please build two arms for this model" << "\n";
+			make_arm();
+		}
+		else
+			listarm();
+		cout << "pleas type in the in the part number of the arm you would like to add for arm1 " << "\n";
+		cin >> ar;
+		r_arm = pullarm(ar);
+		cout << "pleas type in the in the part number of the arm you would like to add for arm2 " << "\n";
+		cin >> ar2;
+		r_arm2 = pullarm(ar2);
+		temp.setarm(r_arm, r_arm2);
+	}
+	else if (ans1 == 2)
+	{
+		make_arm(); 
+
+	} 
+
+
+	cout << "Pleas type the number next to the operation you would like to perforom:" << "\n";
+	cout << "1: add head from list" << "\n";
+	cout << "2: build new head for model" << "\n";
+	cin >> ans1;
+	if (ans1 == 1)
+	{
+		ans2 = getheadtot();
+		if (ans2 == 0)
+		{
+			cout << "Sorry no arms are in stock please build two arms for this model" << "\n";
+			make_head();
+		}
+		else
+			listhead();
+		cout << "pleas type in the in the part number of the head you want to add to model. " << "\n";
+		cin >> hea;
+		r_head = pullhead(hea);
+		temp.sethead(r_head);
+		
+	}
+	else if (ans1 == 2)
+	{
+		make_head();
+
+	}
+
+
+
+	cout << "Pleas type the number next to the operation you would like to perforom:" << "\n";
+	cout << "1: add motor from list" << "\n";
+	cout << "2: build new motor for model" << "\n";
+	cin >> ans1;
+	if (ans1 == 1)
+	{
+		ans2 = getmotor_tot();
+		if (ans2 == 0)
+		{
+			cout << "Sorry no motors are in stock please build motor for this model" << "\n";
+			make_motor();
+		}
+		else
+			listmotor();
+		cout << "pleas type in the in the part number of the motor you would like to this model " << "\n";
+		cin >> mot;
+		r_motor = pullmotor(mot);
+		temp.setmotor(r_motor);
+	}
+	else if (ans1 == 2)
+	{
+		make_motor();
+
+	}
+
+	cout << "Pleas type the number next to the operation you would like to perforom:" << "\n";
+	cout << "1: add torso from list" << "\n";
+	cout << "2: build new torso for model" << "\n";
+	cin >> ans1;
+	if (ans1 == 1)
+	{
+		ans2 = gettorsotot();
+		if (ans2 == 0)
+		{
+			cout << "Sorry no torsos are in stock please build two arms for this model" << "\n";
+			make_torso();
+		}
+		else
+			listtors();
+		cout << "pleas type in the in the part number of the torso you would like to this model " << "\n";
+		cin >> tor;
+		r_torso = pulltorso(tor);
+		temp.settorso(r_torso);
+		
+	}
+	else if (ans1 == 2)
+	{
+		make_torso();
+
+	}
+	temp.setname();
+	temp.setid();
+	temp.set_totcost();
+	temp.setprice();
+	temp.setprofit();
+	fin = temp.getname();
+	add_model(temp);
+	cout << "Model:  " << fin << "has been added" << "\n";
+
 
 }
 
@@ -369,5 +666,80 @@ void factory::list_parts(string test)
 			models[i].modelpartsdump();
 		}
 	   }
+}
+
+robo_arm factory::pullarm(string a)
+{
+	string ansd;
+	int size, i;
+	size = getarmtot();
+	for (i = 0; i < size; i++)
+	{
+		ansd = arm[i].getpartn();
+			if (ansd == a)
+			{
+				return arm[i];
+			}
+	}
+}
+
+robo_head factory::pullhead(string h)
+{
+	string ansd;
+	int size, i;
+	size = getheadtot();
+	for (i = 0; i < size; i++)
+	{
+		ansd = head[i].getpartn();
+		if (ansd == h)
+		{
+			return head[i];
+		}
+	}
+}
+
+robo_battery factory::pullbattery(string b)
+{
+	string ansd;
+	int size, i;
+	size = getbatttot();
+	for (i = 0; i < size; i++)
+	{
+		ansd = battery[i].getpartn();
+		if (ansd == b)
+		{
+			return battery[i];
+		}
+	}
+}
+
+robo_motor factory::pullmotor(string m)
+{
+	string ansd;
+	int size, i;
+	size = getmotor_tot();
+	for (i = 0; i < size; i++)
+	{
+		ansd = motor[i].getpartn();
+		if (ansd == m)
+		{
+			return motor[i];
+		}
+	}
+}
+
+robo_torso factory::pulltorso(string m)
+{
+	string ansd;
+	int size, i;
+	size = gettorsotot();
+	for (i = 0; i < size; i++)
+	{
+		ansd = torso[i].getpartn();
+		if (ansd == m)
+		{
+			return torso[i];
+		}
+	}
 }
 

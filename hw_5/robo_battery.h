@@ -6,7 +6,7 @@ class robo_battery
 public:
 	void setname(string n); 
 	void setpartn(string pn);  
-	void setweight(string w);
+	void setweight(string w);  
 	void setdescrip(char* x);
 	void setcost(double c);
 	void setenergy(string e); 

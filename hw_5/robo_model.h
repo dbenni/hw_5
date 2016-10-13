@@ -9,8 +9,8 @@
 class robot_model
 {
 public:
-	
-	void setname();
+	 
+	void setname(); 
 	void setid();
 	void setprice( );
 	void set_totcost();

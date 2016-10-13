@@ -12,7 +12,7 @@ public:
 	void setcost(double c);
 	string getname();  
 	string getpartn();
-	string getweight();
+	string getweight();  
 	char* getdescrip();
 	double getcost();
 	void setbatn(int i);

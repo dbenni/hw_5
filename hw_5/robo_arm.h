@@ -1,20 +1,23 @@
 #include"std_lib_facilities.h"
+#include <iostream>
+#include <string>
+
 #ifndef _ROBO_ARM_H
 #define _ROBO_ARM_H 2016
 class robo_arm
 {
-public:
+public:  
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);
-	void setdescrip(char* x);
+	void setdescrip(string);
 	void setcost(double c); 
 	void setpower(string e);
 	string getpower();
 	string getname();
 	string getpartn();
 	string getweight();
-	char* getdescrip();
+	string getdescrip();
 	double getcost();
 	void armdump();
 
@@ -23,7 +26,7 @@ public:
 private:
 	string name, partn, weight, Power;
 	double cost;
-	char descrip[250];
+	string descrip;
 };
 #endif
 

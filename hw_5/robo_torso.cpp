@@ -6,16 +6,16 @@
 void robo_torso::setname(string n)
 {
 	name = n;
-}
+} 
 
 void robo_torso::setpartn(string pn)
 {
 	partn = pn;
-}
+} 
 
 void robo_torso::setweight(string w)
 {
-	weight = w;
+	weight = w; 
 }
 
 void robo_torso::setdescrip(char * x)
