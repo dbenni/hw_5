@@ -8,8 +8,8 @@ public:
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);
-	void setdescrip(char* x);  
-	void setcost(double c);
+	void setdescrip(string x);  
+	void setcost(double c); 
 	void setpower(string e); 
 	void setmph(string m);
 	string getmph();
@@ -17,7 +17,7 @@ public:
 	string getname();
 	string getpartn();
 	string getweight();
-	char* getdescrip();
+	string getdescrip();
 	double getcost();
 	void motordump();
 
@@ -26,6 +26,6 @@ public:
 private:
 	string name, partn, weight, Power, MPH;
 	double cost;
-	char descrip[250];
+	string descrip;
 };
 #endif

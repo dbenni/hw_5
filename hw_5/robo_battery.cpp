@@ -1,13 +1,16 @@
 #include "robo_battery.h"
 #include "std_lib_facilities.h"
-#include <string.h>
+#include <iostream>
+#include <string>
+#include <string.h> 
+
  
 
 
 
 void robo_battery::setname(string n)
 {
-	name = n;  
+	name = n;   
 }
 
 void robo_battery::setpartn(string pn)
@@ -20,9 +23,9 @@ void robo_battery::setweight(string w)
 	weight = w;
 }
 
-void robo_battery::setdescrip(char * x)
+void robo_battery::setdescrip(string x)
 {
-	strcpy_s(descrip, x);
+	descrip = x;
 }
 
 void robo_battery::setcost(double c)
@@ -64,9 +67,10 @@ string robo_battery::getweight()
 	return w;
 }
 
-char * robo_battery::getdescrip()
+string robo_battery::getdescrip()
 {
-	char* a = descrip;
+	string a;
+	 a = descrip;
 
 	return a;
 }

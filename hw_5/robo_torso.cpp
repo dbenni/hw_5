@@ -1,7 +1,7 @@
 #include "robo_torso.h"
 #include "std_lib_facilities.h"
 #include "robo_battery.h"
-
+ 
 
 void robo_torso::setname(string n)
 {
@@ -18,9 +18,9 @@ void robo_torso::setweight(string w)
 	weight = w; 
 }
 
-void robo_torso::setdescrip(char * x)
+void robo_torso::setdescrip(string x)
 {
-	strcpy_s(descrip, x);
+	descrip = x;
 
 }
 
@@ -50,9 +50,10 @@ string robo_torso::getweight()
 	return w;
 }
 
-char * robo_torso::getdescrip()
+string robo_torso::getdescrip()
 {
-	char* a = descrip;
+	string a;
+	 a = descrip;
 
 	return a;
 }

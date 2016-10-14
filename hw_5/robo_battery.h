@@ -3,18 +3,18 @@
 #define _ROBO_BATTERY_H 2016
 class robo_battery
 {
-public:
+public: 
 	void setname(string n); 
 	void setpartn(string pn);  
 	void setweight(string w);  
-	void setdescrip(char* x);
+	void setdescrip(string x);
 	void setcost(double c);
 	void setenergy(string e); 
 	string getenergy();
 	string getname();
 	string getpartn();
 	string getweight();
-	char* getdescrip();
+	string getdescrip();
 	double getcost();
 	void  battdump();
 
@@ -23,7 +23,7 @@ public:
 private:
 	string name, partn, weight,energy;
 	double cost;
-	char descrip[250];
+	string descrip;
 
 };
 #endif

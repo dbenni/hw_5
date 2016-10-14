@@ -8,7 +8,7 @@
 
 void robo_arm::setname(string n)
 {
-	name = n;
+	name = n; 
 }
 
 void robo_arm::setpartn(string pn)

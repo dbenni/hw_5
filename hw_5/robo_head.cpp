@@ -1,5 +1,9 @@
 #include "robo_head.h"
 #include "std_lib_facilities.h" 
+#include <iostream>
+#include <string>
+#include <string.h> 
+
 
 void robo_head::setname(string n)
 {
@@ -9,16 +13,16 @@ void robo_head::setname(string n)
 void robo_head::setpartn(string pn)
 {
 	partn = pn;
-}
+} 
 
 void robo_head::setweight(string w)
 {
 	weight = w; 
 }
 
-void robo_head::setdescrip(char * x)
+void robo_head::setdescrip(string x)
 {
-	strcpy_s(descrip, x);
+	descrip = x;
 
 }
 
@@ -48,9 +52,10 @@ string robo_head::getweight()
 	return w;
 }
 
-char * robo_head::getdescrip()
+string robo_head::getdescrip()
 {
-	char* a = descrip;
+	string a;
+	       a = descrip;
 	
 	return a;
 }

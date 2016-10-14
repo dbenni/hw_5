@@ -1,13 +1,27 @@
 #include"robo_model.h"
 #include "std_lib_facilities.h"
 #include "robo_model.h"
-#include <string.h>
+#include <iostream>
+#include <string>
+#include <string.h> 
 
 void robot_model::setname()
 {
 	cout << "Pleas Enter Name of the robot model." << "\n";
 	cin >> name[200];
-	  
+	   
+}
+
+void robot_model::setdescrip(string x)
+{
+	descrip = x;
+}
+
+string robot_model::getdescrip()
+{
+	string d;
+	d = descrip;
+	return d;
 }
 
 void robot_model::setid()

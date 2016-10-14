@@ -9,8 +9,10 @@
 class robot_model
 {
 public:
-	 
+	  
 	void setname(); 
+	void setdescrip(string x);
+	string getdescrip();
 	void setid();
 	void setprice( );
 	void set_totcost();
@@ -41,6 +43,7 @@ private:
 	double sim;
 	double total_cost;
 	double profit;
+	string descrip;
 	robo_arm arm, arm2;
 	robo_battery battery;
 	robo_head head;

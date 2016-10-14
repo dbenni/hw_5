@@ -7,9 +7,9 @@ void robo_motor::setname(string n)
 	name = n; 
 }
 
-void robo_motor::setpartn(stri ng pn)
+void robo_motor::setpartn(string pn)
 {
-	partn = pn; 
+	partn = pn;   
 }
 
 void robo_motor::setweight(string w)
@@ -17,9 +17,9 @@ void robo_motor::setweight(string w)
 	weight = w;  
 }
 
-void robo_motor::setdescrip(char * x)
+void robo_motor::setdescrip(string x)
 {
-	strcpy_s(descrip, x);
+	descrip = x;
 }
 
 void robo_motor::setcost(double c)
@@ -70,9 +70,10 @@ string robo_motor::getweight()
 	return w;
 }
 
-char * robo_motor::getdescrip()
+string robo_motor::getdescrip()
 {
-	char* a = descrip;
+	string a;
+	 a = descrip;
 
 	return a;
 }

@@ -8,12 +8,12 @@ public:
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);
-	void setdescrip(char* x);
-	void setcost(double c);
+	void setdescrip(string x);
+	void setcost(double c); 
 	string getname();  
 	string getpartn();
 	string getweight();  
-	char* getdescrip();
+	string getdescrip();
 	double getcost();
 	void setbatn(int i);
 	int getbatn();
@@ -25,7 +25,7 @@ public:
 private:
 	string name, partn, weight;
 	double cost;
-	char descrip[250];
+	string descrip;
 	int batnum;
 	
 
