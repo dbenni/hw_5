@@ -1,7 +1,7 @@
 #include "std_lib_facilities.h"
 #include "robo_arm.h"
 #include "robo_battery.h"
-#include "robo_head.h"
+#include "robo_head.h 
 #include "robo_motor.h"
 #include "robo_torso.h"
 #ifndef _ROBO_MODEL_H
@@ -34,7 +34,12 @@ public:
 	robo_motor getmotor();
 	robo_torso gettorso();
 	void modeldump();
+	void orderdump();
 	void modelpartsdump();
+	void setax();
+	void setship(double);
+	double gettax();
+	double getship();
 
 
 private:
@@ -49,5 +54,7 @@ private:
 	robo_head head;
 	robo_motor motor;
 	robo_torso torso;
+	double tax;
+	double ship;
 };
 #endif

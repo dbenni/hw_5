@@ -7,7 +7,7 @@ void robo_motor::setname(string n)
 	name = n; 
 }
 
-void robo_motor::setpartn(string pn)
+void robo_motor::setpartn(string pn) 
 {
 	partn = pn;   
 }

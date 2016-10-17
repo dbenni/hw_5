@@ -1,7 +1,7 @@
 #include "std_lib_facilities.h"
 
 #ifndef _ROBO_HEAD_H
-#define _ROBO_HEAD_H 2016
+#define _ROBO_HEAD_H 2016 
 
 
 
@@ -11,7 +11,7 @@ public:
 	void setname(string n);
 	void setpartn(string pn); 
 	void setweight(string w); 
-	void setdescrip(string );
+	void setdescrip(string);
 	void setcost(double c);
 	string getname();
 	string getpartn();
@@ -26,6 +26,7 @@ private:
 	string name, partn, weight;
 	double cost;
 	string descrip;
+	
 
 
 };

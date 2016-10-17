@@ -3,7 +3,7 @@
 #include "robo_battery.h"
  
 
-void robo_torso::setname(string n)
+void robo_torso::setname(string n) 
 {
 	name = n;
 } 

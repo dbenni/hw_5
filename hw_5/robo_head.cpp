@@ -5,7 +5,7 @@
 #include <string.h> 
 
 
-void robo_head::setname(string n)
+void robo_head::setname(string n) 
 {
 	name = n;
 } 
@@ -55,8 +55,7 @@ string robo_head::getweight()
 string robo_head::getdescrip()
 {
 	string a;
-	       a = descrip;
-	
+	a = descrip;
 	return a;
 }
 

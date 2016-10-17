@@ -13,7 +13,7 @@ void robo_arm::setname(string n)
 
 void robo_arm::setpartn(string pn)
 {
-	partn = pn; 
+	partn = pn;  
 }
 
 void robo_arm::setweight(string w)

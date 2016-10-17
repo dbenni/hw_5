@@ -1,9 +1,8 @@
 #include"std_lib_facilities.h"
-#include <iostream>
-#include <string>
 
-#ifndef _ROBO_ARM_H
-#define _ROBO_ARM_H 2016
+
+#ifndef _ROBO_ARM_H 
+#define _ROBO_ARM_H 2016 
 class robo_arm
 {
 public:  

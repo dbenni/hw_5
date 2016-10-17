@@ -24,7 +24,7 @@ string robot_model::getdescrip()
 	return d;
 }
 
-void robot_model::setid()
+void robot_model::setid() 
 {
 	cout << "Pleas Enter ID number for robot model" << "\n";
 	 
@@ -171,10 +171,29 @@ robo_torso robot_model::gettorso()
 
 void robot_model::modeldump()
 {
+	cout << "----------------------------------------------------------------------------" << "\n";
 	cout << "Model name:  " << name << "\n";
 	cout << "Model number:" << id_num << "\n";
 	cout << "     price:  " << price << "\n";
+	cout << "----------------------------------------------------------------------------" << "\n";
 }
+
+void robot_model::orderdump()
+{
+	double x;
+	x = price + tax + ship;
+
+	cout << "----------------------------------------------------------------------------" << "\n";
+	cout << "Model name:  " << name << "\n";
+	cout << "Model number:" << id_num << "\n";
+	cout << "     price:  " << price << "\n";
+	cout << "       tax:  " << tax << "\n";
+	cout << "  shipping:  " << ship << "\n";
+	cout << "     Total:  " << x << "\n";
+	cout << "short description:" << descrip << "\n";
+	cout << "----------------------------------------------------------------------------" << "\n";
+}
+
 
 void robot_model::modelpartsdump()
 {
@@ -184,4 +203,28 @@ void robot_model::modelpartsdump()
 	battery.battdump();
 	motor.motordump();
 	torso.torsodump();
+}
+
+void robot_model::setax()
+{
+	tax = price * .03;
+}
+
+void robot_model::setship(double x)
+{
+	ship = x;
+}
+
+double robot_model::gettax()
+{
+	double ans;
+	ans = tax;
+	return ans;
+}
+
+double robot_model::getship()
+{
+	double sh;
+	sh = ship;
+	return sh;
 }
