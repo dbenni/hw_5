@@ -7,7 +7,7 @@
 
 void BILL::set_saname(string x)
 {
-	sa_name = x;
+	sa_name = x; 
 }
 
 void BILL::set_clname(string c)
@@ -116,21 +116,15 @@ int  BILL::bcountget()
 	return x;
 }
 
-void BILL::settaxship(string name, int shipping) // this may not be needed
+void BILL::settaxship( double shipping) // this may not be needed
 {
 	int x = 0;
-	double sh = (double)shipping;
+	double sh = shipping;
 	string b;
 	for(x = 0; x < purcount; x++) {
-		if(name == purchased[x].getname()) {
+		
 			purchased[x].setship(sh);
 			purchased[x].setax();
-			cout << "Order for " << cl_name << "\n";
-			purchased[x].orderdump();
-		}
-
-		
-
 	}
 }
 
@@ -173,10 +167,17 @@ string BILL::getsalesdescri()
 
 void BILL::billview()
 {
+	double x{ 0 };
 	int i{ 0 }, j{0};
 	j = bcountget();
+	cout << "----------------------------------------" "\n";
 	for (i = 0; i < j; i++) {
+		cout << getclname() << "\n";
 		purchased[i].orderdump();
+		if (getpaid() == true) {
+			x = purchased[i].gettotprof();
+			cout << "Total profit from sale: " << x << "\n";
+		}
 	}
 }
 

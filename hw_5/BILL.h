@@ -4,7 +4,7 @@
 #define _BILL_H 2016
 class BILL
 { 
-public:
+public: 
 	void set_saname(string);
 	void set_clname(string);
 	void set_date(string);
@@ -23,7 +23,7 @@ public:
 	robot_model getmodel();
 	void addmodel(robot_model);
 	int bcountget();
-	void settaxship(string name, int shipping);
+	void settaxship( double shipping);
 	bool getorder();
 	bool getpaid();
 	void updateship();

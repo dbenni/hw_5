@@ -8,7 +8,7 @@
 #define _ROBO_MODEL_H 2016
 class robot_model
 {
-public:
+public: 
 	  
 	void setname(); 
 	void setdescrip(string x); 
@@ -41,12 +41,13 @@ public:
 	void setship(double);
 	double gettax();
 	double getship();
-
+	double gettotprof();
 
 private:
 	string name, id_num;
 	double price{0};
-	double sim;
+	double sim{0};
+	double total_profit;
 	double total_cost{0};
 	double profit{0};
 	string descrip;

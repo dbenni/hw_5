@@ -7,9 +7,9 @@
 #include "robo_model.h"
 #ifndef _FACTORY_H
 #define _FACTORY_H 2016
-class factory
+class factory{
  
-public:
+public: 
 	void factory_menu();
 	void add_head(robo_head x);
 	void add_arm(robo_arm a);
@@ -46,6 +46,7 @@ public:
 	robot_model pullmodel(string mod);
 	void settaxship(string answer,int x);
 	void full_partlist();
+	void salesview();
 
 private:
 	vector<robo_arm> arm;

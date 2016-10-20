@@ -4,7 +4,7 @@
 
 void robo_motor::setname(string n)
 {
-	name = n; 
+	name = n;  
 }
 
 void robo_motor::setpartn(string pn) 

@@ -5,7 +5,7 @@
 
 void robo_torso::setname(string n) 
 {
-	name = n;
+	name = n; 
 }  
 
 void robo_torso::setpartn(string pn)

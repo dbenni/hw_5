@@ -4,7 +4,7 @@
 #define _ROBO_MOTOR_H 2016 
 class robo_motor
 {
-public:
+public: 
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);

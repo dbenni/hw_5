@@ -39,6 +39,12 @@
     <ClInclude Include="robo_model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BILL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ROBO_SHOP.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="robo_head.cpp">
@@ -63,6 +69,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="robo_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BILL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ROBO_SHOP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

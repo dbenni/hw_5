@@ -5,7 +5,7 @@
 #include <string.h> 
 
  
-
+ 
 
 
 void robo_battery::setname(string n)

@@ -1,4 +1,4 @@
-#include "robo_shop.h"
+#include "ROBO_SHOP.h"
 #include"std_lib_facilities.h"
 #include "robo_head.h"
 #include "factory.h"
@@ -7,7 +7,7 @@
 #include "robo_model.h"
 #include "robo_motor.h"
 #include "robo_torso.h"
-#include "BILL.h"
+#include "BILL.h" 
 
 
 
@@ -55,8 +55,9 @@ void ROBO_SHOP::PM_menu()
 void ROBO_SHOP::BC_menu()
 {
 	char x[500], y[500], z[500];
+	double shi{ 0 };
 	string one, two, three, four, five, six, sev, eigt;
-	int a, b, c, d;
+	int a{ 0 }, b{ 0 }, c{ 0 }, d{ 0 };
 	cout << "are you a new client type yes or no type lower case:" << "\n";
 	cin >> one;
 	if (one != "no") { // new client
@@ -74,6 +75,7 @@ void ROBO_SHOP::BC_menu()
 		cout << "please type then number next to the command you would like to enter" << "\n";
 		cout << "1: Make order on store" << "\n";
 		cout << "2: CLoser look at Model" << "\n";
+		cout << "3: order model trough Sales" << "\n"; // added--
 		cin >> four;
 		if (four == "2") {
 			cout << "please type in the id number for the model you would like a closer look at." << "\n";
@@ -82,127 +84,259 @@ void ROBO_SHOP::BC_menu()
 			cout << "\n";
 			cout << "pleas type in the id number for the model you would like to order." << "\n";
 			cin >> six;
-			
+			tempbill.addmodel(shopfactory.pullmodel(six)); // maybe add a order option here
+
+		}
+		else if (four == "3") {
+			c = salescount;
+			if (c != 0) {
+				for (d = 0; d < c; d++) {
+					cout << "----------------------------" << "\n";
+					one = sales[d];
+					cout << "Sales assosciate: " << one << "\n";
+					cout << "----------------------------" << "\n";
+				}
+			}
+
+			cout << "please type in the name of your sales assoiate you would like to order from: " << "\n";
+			cin.getline(y, 500);
+			cin.getline(y, 500);
+			one = "";
+			one = one + y;
+			tempbill.set_saname(one);
+			// print orders through sales view
+			shopfactory.salesview();
+			cout << "pleas type in the id number for the model you would like to order." << "\n";
+			cin >> five;
+			tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
+															//temp_client.addbill();
+
+
+
+			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
+			cin >> eigt;
+			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
+				cout << "1: next day 7.00$" << "\n";
+				cout << "1: 2-4 day 5.00$" << "\n";
+				cout << "1: normal 3.00$" << "\n";
+				cin >> d;
+				if (d == 1) {
+					shi = 7.0;
+				}
+				if (d == 2) {
+					shi = 7.0;
+				}
+				if (d != 1 && d != 2) {
+					shi = 3.0;
+				}
+				tempbill.settaxship(shi);
+				tempbill.updateorder();
+				addbill(tempbill);
+			}
 		}
 
-		else {
+		else if (four != "2" && four != "3") {
 			cout << "pleas type in the id number for the model you would like to order." << "\n";
 			cin >> five;
 			tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
 			//temp_client.addbill();
 
-		}
-	
-		cout << " Make order yes or no (please type yes or no lower case): " << "\n";
-		cin >> eigt;
-		if (eigt != "no") {  // finishes adding client to open client list for sales to grab
-			tempbill.updateorder();
-			addbill(tempbill);
-			
+
+			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
+			cin >> eigt;
+			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
+				cout << "1: next day 7.00$" << "\n";
+				cout << "1: 2-4 day 5.00$" << "\n";
+				cout << "1: normal 3.00$" << "\n";
+				cin >> d;
+				if (d == 1) {
+					shi = 7.0;
+				}
+				if (d == 2) {
+					shi = 7.0;
+				}
+				if (d != 1 && d != 2) {
+					shi = 3.0;
+				}
+				tempbill.settaxship(shi);
+				tempbill.updateorder();
+				addbill(tempbill);
+			}
 		}
 	}
-
 
 	if (one == "no") { // exisiting client
-			cout << "Pleas type in full name:" << "\n";
-			cin.getline(x, 500);
-			cin.getline(x, 500);
-			four = four + x;
-			tempbill.set_clname(four);
-			
+		cout << "Pleas type in full name:" << "\n";
+		cin.getline(x, 500);
+		cin.getline(x, 500);
+		four = four + x;
+		tempbill.set_clname(four);
 
-			cout << "please type then number next to the command you would like to enter" << "\n";
-			cout << "1: Make order on store" << "\n";
-			cout << "2: CLoser look at Model" << "\n";
-			cout << "3: order model trough Sales" << "\n";
-        	cout << "4:  View Orders" << "\n";
-			cin >> three;
-			if (three == "1") {
-				shopfactory.listmodel();
-				cout << "pleas type in the id number for the model you would like to order." << "\n";
-				cin >> five;
-				tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
-																//temp_client.addbill();
 
-			}
-			// put a temp.dump here
+		cout << "please type then number next to the command you would like to enter" << "\n";
+		cout << "1: Make order on store" << "\n";
+		cout << "2: CLoser look at Model" << "\n";
+		cout << "3: order model trough Sales" << "\n";
+		cout << "4:  View Orders" << "\n";
+		cin >> three;
+		if (three == "1") {
+			shopfactory.listmodel();
+			cout << "pleas type in the id number for the model you would like to order." << "\n";
+			cin >> five;
+			tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
+															// put a temp.dump here
 			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
 			cin >> eigt;
 			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
+				cout << "pleas type the number for the shipping method you would like" << "\n";
+				cout << "1: next day 7.00$" << "\n";
+				cout << "1: 2-4 day 5.00$" << "\n";
+				cout << "1: normal 3.00$" << "\n";
+				cin >> d;
+				if (d == 1) {
+					shi = 7.0;
+				}
+				if (d == 2) {
+					shi = 7.0;
+				}
+				if (d != 1 && d != 2) {
+					shi = 3.0;
+				}
+				tempbill.settaxship(shi);
 				tempbill.updateorder();
 				addbill(tempbill);
 
 			}
-			
-			else if (three == "2") {
-				shopfactory.listmodel();
-				cout << "please type in the id number for the model you would like a closer look at." << "\n";
-				cin >> five;
-				shopfactory.list_parts(five);
-				cout << "\n";
-				cout << "pleas type in the id number for the model you would like to order." << "\n";
+			//temp_client.addbill();
+
+		}
+		// put a temp.dump here
+
+
+
+		else if (three == "2") {
+			shopfactory.listmodel();
+			cout << "please type in the id number for the model you would like a closer look at." << "\n";
+			cin >> five;
+			shopfactory.list_parts(five);
+			cout << "\n";
+			cout << "pleas type in the id number for the model you would like to order." << "\n";
+			cin >> six;
+			tempbill.addmodel(shopfactory.pullmodel(six)); // this pull model from factory into temp clinet needs work
+			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
+			cin >> eigt;
+			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
+				cout << "pleas type the number for the shipping method you would like" << "\n";
+				cout << "1: next day 7.00$" << "\n";
+				cout << "1: 2-4 day 5.00$" << "\n";
+				cout << "1: normal 3.00$" << "\n";
+				cin >> d;
+				if (d == 1) {
+					shi = 7.0;
+				}
+				if (d == 2) {
+					shi = 7.0;
+				}
+				if (d != 1 && d != 2) {
+					shi = 3.0;
+				}
+				tempbill.settaxship(shi);
+				tempbill.updateorder();
+				addbill(tempbill);
+			}
+
+		}
+		else if (three == "3") {
+			c = salescount;
+			if (c != 0) {
+				for (d = 0; d < c; d++) {
+					cout << "----------------------------" << "\n";
+					one = sales[d];
+					cout << "Sales assosciate: " << one << "\n";
+					cout << "----------------------------" << "\n";
+				}
+			}
+
+			cout << "please type in the name of your sales assoiate you would like to order from: " << "\n";
+			cin.getline(y, 500);
+			cin.getline(y, 500);
+			one = "";
+			one = one + y;
+			tempbill.set_saname(one);
+			// print orders through sales view
+			shopfactory.salesview();
+			cout << "pleas type in the id number for the model you would like to order." << "\n";
+			cin >> five;
+			tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
+															//temp_client.addbill();
+
+
+
+			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
+			cin >> eigt;
+			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
+				cout << "pleas type the number for the shipping method you would like" << "\n";
+				cout << "1: next day 7.00$" << "\n";
+				cout << "1: 2-4 day 5.00$" << "\n";
+				cout << "1: normal 3.00$" << "\n";
+				cin >> d;
+				if (d == 1) {
+					shi = 7.0;
+				}
+				if (d == 2) {
+					shi = 7.0;
+				}
+				if (d != 1 && d != 2) {
+					shi = 3.0;
+				}
+				tempbill.settaxship(shi);
+				tempbill.updateorder();
+				addbill(tempbill);
+			}
+		}
+		else if (three == "4") {
+			a = 0;
+			b = billcount;             // sub for a get client count 
+			for (c = 0; c < b; c++) {
+				cout << bills[c].getclname() << "\n";
+				if (bills[c].getorder() == true) {
+					cout << "Oder status:  orderd by costumer" << "\n";
+				}
+				else if (bills[c].geteshiped() == true && bills[c].getpaid() == false) {
+					cout << bills[c].getsaname() << "\n";
+					cout << "Oder status:  shiped to costumer" << "\n";
+					a++;
+				}
+				else if (bills[c].getpaid() == true) {
+					cout << bills[c].getsaname() << "\n";
+					cout << "Oder status:  paid and deliverd" << "\n";
+				}
+				bills[c].billview();
+			}
+			if (a > 0)
+			{
+				cout << "would you like to make payment: type yes or no lowercase." << "\n";
 				cin >> six;
-				tempbill.addmodel(shopfactory.pullmodel(six)); // this pull model from factory into temp clinet needs work
-				cout << " Make order yes or no (please type yes or no lower case): " << "\n";
-				cin >> eigt;
-				if (eigt != "no") {  // finishes adding client to open client list for sales to grab
-					tempbill.updateorder();
-					addbill(tempbill);
-				}
-
-			}
-			else if (three == "3") {
-				c = salescount;
-				if (c != 0) {
-					for (d = 0; d < c; d++) {
-						cout << "----------------------------" << "\n";
-						one = sales[d];
-						cout << "Sales assosciate: " << one << "\n";
-						cout << "----------------------------" << "\n";
-					}
-				}
-				
-				cout << "please type in the name of your sales assoiate you would like to order from: " << "\n";
-				cin.getline(y, 500);
-				cin.getline(y, 500);
-				one = "";
-				one = one + y;
-				tempbill.set_saname(one);
-				// print orders through sales view
-				shopfactory.listmodel();
-				cout << "pleas type in the id number for the model you would like to order." << "\n";
-				cin >> five;
-				tempbill.addmodel(shopfactory.pullmodel(five)); //  check this pull model from factory into temp clinet needs work
-																//temp_client.addbill();
-
-			}
-			// put a temp.dump here
-			cout << " Make order yes or no (please type yes or no lower case): " << "\n";
-			cin >> eigt;
-			if (eigt != "no") {  // finishes adding client to open client list for sales to grab
-				tempbill.updateorder();
-				addbill(tempbill);
-			}
-			else if (three == "4") {
-				a = billcount;
-				for (b = 0; b < a; b++) {
-					if (bills[b].getclname() == four) {
-						cout << bills[b].getclname();
-						bills[b].billview(); // orders view
+				for (c = 0; c < b; c++)
+				{
+					if (bills[c].get_ordernum() == six)
+					{
+						bills[c].updatepaid();
+						cout << bills[c].get_ordernum() << " Paid." << "\n";
 					}
 				}
 			}
 
+		}
 
 	}
-	
 }
 
 void ROBO_SHOP::SA_menu()
 {
 	char x[500], y[500];
 	string one, two, three, four, five, six, seven;
-	int  b, c, d, e;
+	int  b{ 0 }, c{ 0 }, d{ 0 }, e{0};
 	cout << "are you a new hire yes or no type lower case:" << "\n";
 	cin >> one;
 	if (one != "no") {
@@ -236,15 +370,25 @@ void ROBO_SHOP::SA_menu()
 		six = six + y;
 		b = billcount;
 		for (c = 0; c < b; c++) {
-			if (bills[c].getclname() == six) {
-				bills[c].set_saname(six);
+			if (bills[c].getclname() == six && bills[c].getshipped() == false) {
+				bills[c].set_saname(two);
 				cout << "please type in a sort sales descrip:" << "\n";
 				cin.getline(x, 500);
 				cin.getline(x, 500);
 				four = four + x;
+				cout << "please type in the date in this format (dd-mm-y):" << "\n";
+				cin.getline(y, 500);
+				cin.getline(y, 500);
+				seven = seven + y;
+				bills[c].set_date(seven);
+				cout << "please enter a order number all digits:" << "\n";
+				cin.getline(y, 500);
+				cin.getline(y, 500);
+				five = "";
+				five = five + y;
+				bills[c].set_ordernum(five);
 				bills[c].setsalesdescri(four);
 				bills[c].updateship();
-				cout << "this order has been completed" << "\n";
 			}
 		}
 	}
@@ -344,7 +488,6 @@ void ROBO_SHOP::addbill(BILL x)
 	bills.push_back(x);
 	billcount++;
 	c = billcount;
-	cout << "test: " << c << "\n";
 	tempbill = temp;
 }
 

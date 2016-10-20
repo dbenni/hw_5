@@ -147,15 +147,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Desktop\vs2015\std_lib_facilities.h" />
+    <ClInclude Include="BILL.h" />
     <ClInclude Include="factory.h" />
     <ClInclude Include="robo_arm.h" />
     <ClInclude Include="robo_battery.h" />
     <ClInclude Include="robo_head.h" />
     <ClInclude Include="robo_model.h" />
     <ClInclude Include="robo_motor.h" />
+    <ClInclude Include="ROBO_SHOP.h" />
     <ClInclude Include="robo_torso.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BILL.cpp" />
     <ClCompile Include="factory.cpp" />
     <ClCompile Include="robo_arm.cpp" />
     <ClCompile Include="robo_battery.cpp" />
@@ -163,6 +166,7 @@
     <ClCompile Include="robo_head_test.cpp" />
     <ClCompile Include="robo_model.cpp" />
     <ClCompile Include="robo_motor.cpp" />
+    <ClCompile Include="ROBO_SHOP.cpp" />
     <ClCompile Include="robo_torso.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

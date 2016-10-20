@@ -9,7 +9,7 @@
 
  
 
-
+ 
 
    
 
@@ -19,16 +19,17 @@ void factory::factory_menu()
 
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
 	while (answer3 != 6) {
-	cout << "1 build arm: " << "\n";
-	cout << "2 build battery: " << "\n";
-	cout << "3 build head" << "\n";
-	cout << "4 build motor" << "\n";
-	cout << "5 build torso" << "\n";
-	cout << "6 exit" << "\n";
-	cin >> answer3;
-	build_robopart(answer3);
+		cout << "1 build arm: " << "\n";
+		cout << "2 build battery: " << "\n";
+		cout << "3 build head" << "\n";
+		cout << "4 build motor" << "\n";
+		cout << "5 build torso" << "\n";
+		cout << "6 exit" << "\n";
+		cin >> answer3;
+		build_robopart(answer3);
+	}
 }
-}
+
 
 void factory::add_head(robo_head x)
 {
@@ -695,6 +696,7 @@ void factory::list_parts(string test)
 		ansd = models[i].getid();
 		if (ansd == test)
 		{
+			models[i].modeldump();
 			models[i].modelpartsdump();
 		}
 	   }
@@ -809,5 +811,15 @@ void factory::full_partlist()
 	 listmotor();
 
 	 
+}
+
+void factory::salesview()
+{
+	int a{0}, b{ 0 }, c{ 0 };
+	a = getmodeltot();
+	for (b = 0; b < a; b++) {
+		models[b].facdump();
+		models[b].modelpartsdump();
+	}
 }
 

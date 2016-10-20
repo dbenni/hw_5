@@ -1,6 +1,8 @@
 #include "Client.h"
 #include "BILL.h"
+#include "Sales_associate.h"
 #include "std_lib_facilities.h"
+#include "factory.h"
 
 
 
@@ -32,7 +34,7 @@ void Client::addbill()
 	ordertotal++;
 }
 
-void Client::addorderdbill(string name,string date)
+void Client::addorderdbill(string name,string date, string id)
 {
 	int xm, b;
 	string one, two;
@@ -40,6 +42,7 @@ void Client::addorderdbill(string name,string date)
 		for (b = 0; b < xm; xm++) {
 			if ((orders[b].getclname() == name))
 				orders[b].set_date(date);
+			    orders[b].set_ordernum(id);
 		}
 }
 
@@ -47,13 +50,7 @@ void Client::updatorder(string x)
 {
 	int one, two, three;
 
-	one = getordertotal();
-	for (two = 0; two < one; one++) {
-		if (orders[two].getclname = x) {
-			orders[two].setsalesdescri();
-			oder[]
-		}
-	}
+
 }
 
 void Client::updatestatusorder(string name, string desi)
@@ -99,7 +96,7 @@ void Client::finishbillorder(string y)
 	int ship;
 	int i;
 	string test;
-	x = getordertotal();
+	x = getordertotal(); // Note this
 	cout << "pleas type the number next to the shpping method you would like to select:" << "\n";
 	cout << "1: nextday 7.00$ " << "\n";
 	cout << "2: 2-3days 5.00$ " << "\n";
@@ -116,7 +113,8 @@ void Client::finishbillorder(string y)
 
 	for (i = 0; i < x; i++) {
 		if (orders[i].getclname() == y) {
-			orders[i].settaxship(y, ship);
+			orders[i].settax(ship);        // note this
+
 		}
 	}
 }
@@ -125,10 +123,38 @@ void Client::finishbillorder(string y)
 
 void Client::printbills()
 {
+	bool one;
+	string an, an2, an3;
+	int x,i;
+	x = getordertotal();
+	for (i = 0; i < x; i++) {
+		if (orders[i].getshipped() == true) {
+			cout  << "Oder for: " << orders[i].getclname() << "\n"; // final
+			cout << "  status: " << "Shipped";
+			orders[i].billview();
+		}
+		if (orders[i].getpaid() == true) {                       // final piece of the puzzel
+			cout << "Oder for: " << orders[i].getclname() << "\n";
+			cout << "  status: " << "completed";
+			orders[i].billview();
+		}
+	}
 }
 
 void Client::printorder()
 {
+
+	bool one;
+	string an, an2, an3;
+	int x, i;
+	x = getordertotal();
+	for (i = 0; i < x; i++) {
+		if (orders[i].getshipped() == true) {
+			cout << "Oder for: " << orders[i].getclname() << "\n";
+			cout << "  status: " << "Shipped";
+			orders[i].billview();
+		}
+	}
 }
 
 int Client::getordertotal()

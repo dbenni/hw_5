@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <string.h> 
-
+ 
 
 void robo_head::setname(string n) 
 {

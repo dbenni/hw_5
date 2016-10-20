@@ -10,7 +10,7 @@
 
 #include "ROBO_SHOP.h"
 
-
+ 
 
 
 int main() {  
@@ -19,7 +19,7 @@ int main() {
 	string test, test2, test3, test4, test5;
 //	double x;
 	ROBO_SHOP shop;
-	factory fac;
+	factory fac; 
 	cout << "made it here" << "\n";
 	shop.turnon();
 	

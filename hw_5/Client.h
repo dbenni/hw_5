@@ -1,6 +1,8 @@
 #include "std_lib_facilities.h"
 #include "robo_model.h"
 #include "BILL.h"
+#ifndef _CLIENT_H
+#define _CLIENT_H 2016
 class Client
 {
 public:
@@ -9,7 +11,7 @@ public:
 	void addmodel(robot_model);
 	void getmodel_info();  
 	void addbill();  
-	void addorderdbill(string, string); 
+	void addorderdbill(string, string, string); 
 	void updatorder(string x);
 	void Client::updatestatusorder(string, string);
 	string getname(); 
@@ -26,4 +28,4 @@ private:
 	
 	
 };
-
+#endif

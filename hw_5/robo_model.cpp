@@ -5,7 +5,7 @@
 #include "robo_model.h"
 #include "robo_motor.h"
 #include "robo_torso.h"
-
+ 
 void robot_model::setname()
 {
 	char b[500];
@@ -189,7 +189,7 @@ void robot_model::orderdump() // for pointy haird bose you need total and price 
 {
 	double x{0};
 	x = price + tax + ship;
-
+	total_profit = x - total_cost;
 	cout << "----------------------------------------------------------------------------" << "\n";
 	cout << "Model name:  " << name << "\n";
 	cout << "Model number:" << id_num << "\n";
@@ -246,4 +246,9 @@ double robot_model::getship()
 	double sh{0};
 	sh = ship;
 	return sh;
+}
+
+double robot_model::gettotprof()
+{
+	return total_profit;
 }
