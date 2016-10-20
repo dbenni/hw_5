@@ -1,7 +1,7 @@
 #include "std_lib_facilities.h"
 #include "robo_arm.h"
 #include "robo_battery.h"
-#include "robo_head.h 
+#include "robo_head.h"
 #include "robo_motor.h"
 #include "robo_torso.h"
 #ifndef _ROBO_MODEL_H
@@ -11,7 +11,7 @@ class robot_model
 public:
 	  
 	void setname(); 
-	void setdescrip(string x);
+	void setdescrip(string x); 
 	string getdescrip();
 	void setid();
 	void setprice( );
@@ -35,6 +35,7 @@ public:
 	robo_torso gettorso();
 	void modeldump();
 	void orderdump();
+	void facdump();
 	void modelpartsdump();
 	void setax();
 	void setship(double);
@@ -43,18 +44,18 @@ public:
 
 
 private:
-	string name[200 ], id_num[200];
-	double price;
+	string name, id_num;
+	double price{0};
 	double sim;
-	double total_cost;
-	double profit;
+	double total_cost{0};
+	double profit{0};
 	string descrip;
 	robo_arm arm, arm2;
 	robo_battery battery;
 	robo_head head;
 	robo_motor motor;
 	robo_torso torso;
-	double tax;
-	double ship;
+	double tax{0};
+	double ship{0};
 };
 #endif

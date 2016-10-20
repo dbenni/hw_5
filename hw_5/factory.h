@@ -1,16 +1,14 @@
 #include"std_lib_facilities.h"
 #include"robo_arm.h"
 #include"robo_battery.h"
-#include"robo_head.h"
+#include"robo_head.h" 
 #include"robo_torso.h"
 #include"robo_motor.h"
 #include "robo_model.h"
-#include <iostream> 
-#include <string> 
 #ifndef _FACTORY_H
 #define _FACTORY_H 2016
 class factory
-{
+ 
 public:
 	void factory_menu();
 	void add_head(robo_head x);
@@ -24,9 +22,9 @@ public:
 	void make_arm();
 	void make_head();
 	void make_motor();
-	void make_torso();
+	void make_torso(); 
 	void set_batt(robo_battery t);
-	void build_model();
+	string build_model();
 	int getarmtot();
 	void listarm();
 	void listbatt();
@@ -45,6 +43,9 @@ public:
 	robo_battery pullbattery(string b);
 	robo_motor pullmotor(string m);
 	robo_torso pulltorso(string m);
+	robot_model pullmodel(string mod);
+	void settaxship(string answer,int x);
+	void full_partlist();
 
 private:
 	vector<robo_arm> arm;

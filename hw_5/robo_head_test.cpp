@@ -6,22 +6,23 @@
 #include "robo_model.h"
 #include "robo_motor.h"
 #include "robo_torso.h"
+#include "BILL.h"
+
+#include "ROBO_SHOP.h"
 
 
 
 
-int main() { 
-	char t[300]; 
-	char b[300];
+int main() {  
+//	char t[300]; 
+//	char b[300];
 	string test, test2, test3, test4, test5;
-	double x;
+//	double x;
+	ROBO_SHOP shop;
 	factory fac;
-	robo_arm r;
-	robo_head h;
+	cout << "made it here" << "\n";
+	shop.turnon();
 	
-	fac.make_head();
-	fac.listhead();
-
 	
 
 }

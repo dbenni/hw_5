@@ -13,7 +13,7 @@ public:
 	string getname();  
 	string getpartn();
 	string getweight();  
-	string getdescrip();
+	string getdescrip(); 
 	double getcost();
 	void setbatn(int i);
 	int getbatn();
@@ -24,9 +24,9 @@ public:
 
 private:
 	string name, partn, weight;
-	double cost;
+	double cost{0};
 	string descrip;
-	int batnum;
+	int batnum{0};
 	
 
 };

@@ -6,9 +6,7 @@
 #include "robo_head.h"
 #include "robo_model.h"
 #include "std_lib_facilities.h"
-#include <iostream>
-#include <string>
-#include <string.h> 
+
  
 
 
@@ -17,7 +15,7 @@
 
 void factory::factory_menu() 
 {
-	int answer3 = 0;
+	int answer3 = 0; 
 
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
 	while (answer3 != 6) {
@@ -67,8 +65,8 @@ void factory::build_robopart(int num)
 	robo_battery t, t2;
 	int answer = 0, answer2 = 0;
 	string a11, a12, a13, a14, a15, a16;
-	double x;
-	char a[300],b[300],h[300],m[300],to[300];
+	double x{0};
+	char a[300],h[300];
 	if (num == 1) {
 
 		cout << "please Enter your description of the arm" << "\n";
@@ -208,7 +206,7 @@ void factory::build_robopart(int num)
 void factory::make_batt()
 {
 	string an1, an2, an3, an4, an5;
-	double c;
+	double c{0};
 	char x[300];
 	cout << "pleas enter name of robot battery(no spaces)" << "\n";
 	cin >> an1;
@@ -238,10 +236,9 @@ void factory::make_batt()
 
 void factory::make_arm()
 {
-	robo_battery t, t2;
 	int answer = 0;
 	string an1, an2, an3, an4, an5, an6;
-	double x;
+	double x{0};
 	char d[300];
 
 
@@ -299,10 +296,10 @@ void factory::make_arm()
 
 void factory::make_head()
 {
-	robo_battery t, t2;
+	
 	int answer = 0;
 	string an1, an2, an3, an4, an5, an6;
-	double x;
+	double x{0};
 	char d[300];
 
 	cout << "pleas enter name of robot head(no spaces)" << "\n";
@@ -330,10 +327,10 @@ void factory::make_head()
 
 void factory::make_motor()
 {
-	robo_battery t, t2;
+	
 	int answer = 0;
 	string an1, an2, an3, an4, an5, an6;
-	double x;
+	double x{0};
 	char d[500];
 
 	cout << "pleas enter name of robot motor(no spaces)" << "\n";
@@ -371,7 +368,7 @@ void factory::make_torso()
 	robo_battery t, t2;
 	int answer = 0, answer2;
 	string an1, an2, an3, an4, an5, an6;
-	double x;
+	double x{0};
 	char d[500];
 
 	cout << "pleas enter name of robot torso(no spaces)" << "\n";
@@ -415,7 +412,7 @@ void factory::make_torso()
 void factory::set_batt(robo_battery t)
 {
 	string an1, an2, an3, an4, an5;
-	double c;
+	double c{ 0 };
 	char x[300];
 	cout << "pleas enter name of robot battery(no spaces)" << "\n";
 	cin >> an1;
@@ -439,11 +436,11 @@ void factory::set_batt(robo_battery t)
 	t.setpartn(an2);
 }
 
-void factory::build_model()
+string factory::build_model()
 { 
-	string ar, ar2, mot, tor, hea,fin,arf;
+	string ar, ar2, mot, tor, hea, fin, arf,at;
 	char x[500];
-	int ans1,ans2, ans3, ans4;
+	int ans1{ 0 }, ans2{0};
 	cout << "Pleas type the number next to the operation you would like to perforom:" << "\n";
 	cout << "1: add arm from list" << "\n";
 	cout << "2: build new arm for model" << "\n";
@@ -466,10 +463,9 @@ void factory::build_model()
 		r_arm2 = pullarm(ar2);
 		temp.setarm(r_arm, r_arm2);
 	}
-	else if (ans1 == 2)
+  else if (ans1 != 1)
 	{
 		make_arm(); 
-
 	} 
 
 
@@ -493,7 +489,7 @@ void factory::build_model()
 		temp.sethead(r_head);
 		
 	}
-	else if (ans1 == 2)
+	else if (ans1 != 1)
 	{
 		make_head();
 
@@ -520,7 +516,7 @@ void factory::build_model()
 		r_motor = pullmotor(mot);
 		temp.setmotor(r_motor);
 	}
-	else if (ans1 == 2)
+	else if (ans1 != 1)
 	{
 		make_motor();
 
@@ -546,7 +542,7 @@ void factory::build_model()
 		temp.settorso(r_torso);
 		
 	}
-	else if (ans1 == 2)
+	else if (ans1 != 1)
 	{
 		make_torso();
 
@@ -565,7 +561,9 @@ void factory::build_model()
 	add_model(temp);
 	model_tot++;
 	cout << "Model:  " << fin << "has been added" << "\n";
-
+	cout << " are you finished yes or no:" << "\n";
+	cin >> at;
+	return at;
 
 }
 
@@ -578,7 +576,7 @@ int factory::getarmtot()
 
 void factory::listarm()
 {   
-	int x,i;
+	int x{ 0 }, i{0};
 	x = getarmtot();
 	for (i = 0; i < x; i++) {
 		cout << "---------------------------------------------" << "\n";
@@ -589,7 +587,7 @@ void factory::listarm()
 
 void factory::listbatt()
 {
-	int b, i;
+	int b{ 0 }, i{0};
 	b = getbatttot();
 	for (i = 0; i < b; i++) {
 		cout << "---------------------------------------------" << "\n";
@@ -690,7 +688,7 @@ int factory::getmodeltot()
 void factory::list_parts(string test)
 {
 	string ansd;
-	int size,i;
+	int size{ 0 }, i{0};
 	size = model_tot;
 	for (i = 0; i < size; i++) 
 	   {
@@ -795,5 +793,21 @@ robot_model factory::pullmodel(string mod)
 void factory::settaxship(string answer, int x)
 {
 
+}
+
+void factory::full_partlist()
+{
+	cout << "ARMS:" << "\n";
+	 listarm();
+	 cout << "BATTERIES:" << "\n";
+	 listbatt();
+	 cout << "HEADS:" << "\n";
+	 listhead();
+	 cout << "MOTORS:" << "\n";
+	 listtors();
+	 cout << "MOTORS:" << "\n";
+	 listmotor();
+
+	 
 }
 

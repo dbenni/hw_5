@@ -4,7 +4,7 @@
 class robo_battery
 {
 public: 
-	void setname(string n); 
+	void setname(string n);  
 	void setpartn(string pn);  
 	void setweight(string w);  
 	void setdescrip(string x);
@@ -22,7 +22,7 @@ public:
 
 private:
 	string name, partn, weight,energy;
-	double cost;
+	double cost{0};
 	string descrip;
 
 };

@@ -5,7 +5,7 @@
 #define _ROBO_ARM_H 2016 
 class robo_arm
 {
-public:  
+public:   
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);
@@ -24,7 +24,7 @@ public:
 
 private:
 	string name, partn, weight, Power;
-	double cost;
+	double cost{0};
 	string descrip;
 };
 #endif

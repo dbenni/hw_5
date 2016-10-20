@@ -1,16 +1,20 @@
 #include"robo_model.h"
 #include "std_lib_facilities.h"
+#include "robo_arm.h"
+#include "robo_battery.h"
 #include "robo_model.h"
-#include <iostream>
-#include <string>
-#include <string.h> 
+#include "robo_motor.h"
+#include "robo_torso.h"
 
 void robot_model::setname()
 {
+	char b[500];
+	string x;
 	cout << "Pleas Enter Name of the robot model." << "\n";
-	cin >> name[200];
-	   
-}
+	cin.getline(b, 500);
+	x = x + b;
+	name = x;
+} 
 
 void robot_model::setdescrip(string x)
 {
@@ -26,22 +30,25 @@ string robot_model::getdescrip()
 
 void robot_model::setid() 
 {
+	string x;
+	char b[500];
 	cout << "Pleas Enter ID number for robot model" << "\n";
-	 
-	cin >> id_num[200];
+	cin.getline(b, 500);
+	x = x + b;
+	id_num = x;
 } 
 
 void robot_model::setprice()
 {
 	double c;
 	c = getcost();
-	cout << " Pleas Enter the price of this model.  " <<"not total cost is  " << c << "\n";
+	cout << " Pleas Enter the price of this model.  " <<"note total cost is  " << getcost() << "\n";
 	cin >> price;
 }
 
 void robot_model::set_totcost()
 {
-	double tot, he, ar, ar2, to, mo,ba;
+	double tot{ 0 }, he{ 0 }, ar{ 0 }, ar2{ 0 }, to{ 0 }, mo{ 0 }, ba{0};
 	he = head.getcost();
 	ar = arm.getcost();
 	ar2 = arm2.getcost();
@@ -49,7 +56,7 @@ void robot_model::set_totcost()
 	mo = motor.getcost();
 	ba = battery.getcost();
 	tot = 0;
-	tot = tot + he + ar + ar2 + to + mo + ba;
+	tot = (tot + he) + (ar + ar2) + (to + mo + ba);
 	total_cost = tot;
 	
 
@@ -62,7 +69,7 @@ void robot_model::setprofit()
 	double c, p;
 	p = price;
 	c = total_cost;
-	profit = p - c;
+	profit = (p - c);
 }
 
 void robot_model::setarm(robo_arm a, robo_arm z)
@@ -93,21 +100,21 @@ void robot_model::settorso(robo_torso t)
 
 string robot_model::getname()
 {
-	string n[200];
-	n[200] = name[200];
-	return n[200];
+	string n;
+	n = name;
+	return n;
 } 
 
 string robot_model::getid()
 {
-	string i[200];
-	i[200] = id_num[200];
-	return i[200];
+	string i;
+	i = id_num;
+	return i;
 }
 
 double robot_model::getcost()
 {
-	double  c;
+	double  c{0};
 	c = total_cost;
 	return c;
 	
@@ -115,14 +122,14 @@ double robot_model::getcost()
 
 double robot_model::getprice()
 {
-	double p;
+	double p{0};
 	p = price;
 	return p;
 }
 
 double robot_model::getprofit()
 {
-	double prof;
+	double prof{0};
 	prof = profit;
 	return prof;
 }
@@ -178,9 +185,9 @@ void robot_model::modeldump()
 	cout << "----------------------------------------------------------------------------" << "\n";
 }
 
-void robot_model::orderdump()
+void robot_model::orderdump() // for pointy haird bose you need total and price and sa for stuff
 {
-	double x;
+	double x{0};
 	x = price + tax + ship;
 
 	cout << "----------------------------------------------------------------------------" << "\n";
@@ -193,6 +200,18 @@ void robot_model::orderdump()
 	cout << "short description:" << descrip << "\n";
 	cout << "----------------------------------------------------------------------------" << "\n";
 }
+
+void robot_model::facdump()
+{
+	cout << "----------------------------------------------------------------------------" << "\n";
+	cout << "       Model name:  " << name << "\n";
+	cout << "     Model number:  " << id_num << "\n";
+	cout << "     Model   Cost:  " << total_cost << "\n";
+	cout << "            price:  " << price << "\n";
+	cout << "short description:  " << descrip << "\n";
+	cout << "----------------------------------------------------------------------------" << "\n";
+}
+
 
 
 void robot_model::modelpartsdump()
@@ -224,7 +243,7 @@ double robot_model::gettax()
 
 double robot_model::getship()
 {
-	double sh;
+	double sh{0};
 	sh = ship;
 	return sh;
 }

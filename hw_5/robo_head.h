@@ -9,7 +9,7 @@ class robo_head
 {
 public:  
 	void setname(string n);
-	void setpartn(string pn); 
+	void setpartn(string pn);  
 	void setweight(string w); 
 	void setdescrip(string);
 	void setcost(double c);
@@ -24,7 +24,7 @@ public:
 
 private:
 	string name, partn, weight;
-	double cost;
+	double cost{0};
 	string descrip;
 	
 

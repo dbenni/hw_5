@@ -16,7 +16,7 @@ void robo_head::setpartn(string pn)
 } 
 
 void robo_head::setweight(string w)
-{
+{ 
 	weight = w; 
 }
 

@@ -9,7 +9,7 @@ public:
 	void setpartn(string pn);
 	void setweight(string w);
 	void setdescrip(string x);  
-	void setcost(double c); 
+	void setcost(double c);  
 	void setpower(string e); 
 	void setmph(string m);
 	string getmph();
@@ -25,7 +25,7 @@ public:
 
 private:
 	string name, partn, weight, Power, MPH;
-	double cost;
+	double cost{0};
 	string descrip;
 };
 #endif

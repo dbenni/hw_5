@@ -15,7 +15,7 @@ void robo_motor::setpartn(string pn)
 void robo_motor::setweight(string w)
 {
 	weight = w;  
-}
+} 
 
 void robo_motor::setdescrip(string x)
 {
@@ -87,7 +87,7 @@ double robo_motor::getcost()
 
 void robo_motor::motordump()
 {
-	cout << " Loco Motor Name:  " << name << "\n";
+	cout << "Motor Name:  " << name << "\n";
 	cout << "Part Number:  " << partn << "\n";
 	cout << "Cost:  " << cost << "\n";
 	cout << "Power:  " << Power << "\n";

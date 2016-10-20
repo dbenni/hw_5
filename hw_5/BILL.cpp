@@ -12,12 +12,24 @@ void BILL::set_saname(string x)
 
 void BILL::set_clname(string c)
 {
-	cl_name = c;
+	cl_name = c; 
 }
 
 void BILL::set_date(string d)
 {
 	date_of_sale = d;
+}
+
+void BILL::set_ordernum(string xx)
+{
+	order_number = xx;
+}
+
+string BILL::get_ordernum()
+{
+	string xx;
+	xx = order_number;
+	return xx;
 }
 
 void BILL::setprof(double p)
@@ -35,7 +47,7 @@ void BILL::settax(double t)
 	tax = t;
 }
 
-void BILL::setship(double s)
+void BILL::setship(double s) // also need one for ship
 {
 	shipping = s;
 }
@@ -88,15 +100,18 @@ robot_model BILL::getmodel()
 	return robot_model();
 }
 
-void BILL::addmodel(robot_model x)
+void BILL::addmodel(robot_model x) // add model is where you update bill
 {
+	int v{0};
 	purchased.push_back(x);
 	purcount++;
+	v = purcount;
+	
 }
 
 int  BILL::bcountget()
 {
-	int x;
+	int x{0};
 	x = purcount;
 	return x;
 }
@@ -107,7 +122,7 @@ void BILL::settaxship(string name, int shipping) // this may not be needed
 	double sh = (double)shipping;
 	string b;
 	for(x = 0; x < purcount; x++) {
-		if(name == purchased[x].getname) {
+		if(name == purchased[x].getname()) {
 			purchased[x].setship(sh);
 			purchased[x].setax();
 			cout << "Order for " << cl_name << "\n";
@@ -127,6 +142,11 @@ bool BILL::getorder()
 bool BILL::getpaid()
 {
 	return paid;
+}
+
+void BILL::updateship()
+{
+	shipped = true;
 }
 
 void BILL::updateorder()
@@ -150,3 +170,28 @@ string BILL::getsalesdescri()
 	d = salesdescrip;
 	return d;
 }
+
+void BILL::billview()
+{
+	int i{ 0 }, j{0};
+	j = bcountget();
+	for (i = 0; i < j; i++) {
+		purchased[i].orderdump();
+	}
+}
+
+bool BILL::getshipped()
+{
+	bool an;
+	an = shipped;
+	return an;
+}
+
+bool BILL::geteshiped()
+{
+	bool t;
+	t = shipped;
+	return t;
+}
+
+
