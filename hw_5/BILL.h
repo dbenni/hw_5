@@ -2,7 +2,7 @@
 #include "robo_model.h"
 #ifndef _BILL_H
 #define _BILL_H 2016
-class BILL
+class BILL   
 { 
 public: 
 	void set_saname(string);

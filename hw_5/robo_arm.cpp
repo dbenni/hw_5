@@ -9,7 +9,7 @@
 void robo_arm::setname(string n)
 {
 	name = n; 
-}
+} 
 
 void robo_arm::setpartn(string pn)
 {
@@ -44,7 +44,7 @@ string robo_arm::getpower()
 	x = Power;
 	return x;
 }
-
+ 
 string robo_arm::getname()
 {
 	string n;

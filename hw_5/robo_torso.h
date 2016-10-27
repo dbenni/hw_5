@@ -4,7 +4,7 @@
 #define _ROBO_TORSO_H 2016
 class robo_torso
 {
-public:
+public:  
 	void setname(string n);
 	void setpartn(string pn);
 	void setweight(string w);

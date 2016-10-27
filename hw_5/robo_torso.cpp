@@ -15,7 +15,7 @@ void robo_torso::setpartn(string pn)
 
 void robo_torso::setweight(string w)
 {
-	weight = w; 
+	weight = w;  
 }
 
 void robo_torso::setdescrip(string x)
@@ -106,3 +106,4 @@ void robo_torso::torsodump()
 
 	}
 }
+ 

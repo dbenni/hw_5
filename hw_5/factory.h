@@ -7,7 +7,7 @@
 #include "robo_model.h"
 #ifndef _FACTORY_H
 #define _FACTORY_H 2016
-class factory{
+class factory{  
  
 public: 
 	void factory_menu();

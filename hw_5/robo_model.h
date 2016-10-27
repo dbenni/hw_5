@@ -8,7 +8,7 @@
 #define _ROBO_MODEL_H 2016
 class robot_model
 {
-public: 
+public:   
 	  
 	void setname(); 
 	void setdescrip(string x); 

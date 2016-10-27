@@ -3,7 +3,7 @@
 #define _ROBO_BATTERY_H 2016
 class robo_battery
 {
-public:  
+public:   
 	void setname(string n);  
 	void setpartn(string pn);  
 	void setweight(string w);  
@@ -25,5 +25,5 @@ private:
 	double cost{0};
 	string descrip;
 
-};
+}; 
 #endif

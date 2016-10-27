@@ -7,7 +7,7 @@
 
 class robo_head
 {
-public:   
+public:     
 	void setname(string n);
 	void setpartn(string pn);  
 	void setweight(string w); 

@@ -16,7 +16,7 @@ void robo_motor::setweight(string w)
 {
 	weight = w;  
 } 
-
+ 
 void robo_motor::setdescrip(string x)
 {
 	descrip = x;
@@ -41,8 +41,8 @@ string robo_motor::getpower()
 	return x;
 }
 void robo_motor::setmph(string m) {
-	MPH = m;
-}
+	MPH = m + " mph";
+} 
 string robo_motor::getmph() {
 	string m;
 	m = MPH;

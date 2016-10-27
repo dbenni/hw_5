@@ -14,7 +14,7 @@
    
 
 void factory::factory_menu() 
-{
+{ 
 	int answer3 = 0; 
 
 	cout << "pleas type the number next to the command you would like to perform" << "\n";
@@ -381,9 +381,7 @@ void factory::make_torso()
 	cout << "pleas enter 1 2 or 3 for number of batterys in torso of robot(no spaces use numbers)" << "\n";
 	cin >> answer2;
 	cout << "pleas enter cost of robot torso(please type numbers)" << "\n";
-	cin >> x;
-	cout << " pleas type in max speed of torso(use number)" << "\n";
-	cin >> an5;
+	cin >> x; 
 	cout << "pleas enter description of robot torso" << "\n";
 	cin.getline(d, 500);
 	cin.getline(d, 500);

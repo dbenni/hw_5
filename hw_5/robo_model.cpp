@@ -15,7 +15,7 @@ void robot_model::setname()
 	x = x + b;
 	name = x;
 } 
-
+ 
 void robot_model::setdescrip(string x)
 {
 	descrip = x;
@@ -77,7 +77,7 @@ void robot_model::setarm(robo_arm a, robo_arm z)
 	arm = a;
 	arm2 = z;
 }
-
+ 
 void robot_model::setbattery(robo_battery b)
 {
 	battery = b;

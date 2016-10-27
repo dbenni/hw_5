@@ -11,7 +11,7 @@
 void robo_battery::setname(string n)
 {
 	name = n;   
-}
+} 
 
 void robo_battery::setpartn(string pn)
 {
@@ -22,7 +22,7 @@ void robo_battery::setweight(string w)
 {
 	weight = w;
 }
-
+ 
 void robo_battery::setdescrip(string x)
 {
 	descrip = x;

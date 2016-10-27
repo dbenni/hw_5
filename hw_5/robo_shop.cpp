@@ -68,7 +68,6 @@ void ROBO_SHOP::BC_menu()
 		//cin.getline(y, 500);
 		//cin.getline(y, 500);
 		two = two + x;
-		three = three + y;
 		tempbill.set_clname(two);
 		//temp_client.setdate(three);
 		shopfactory.listmodel(); // add new list model for store view
@@ -299,15 +298,15 @@ void ROBO_SHOP::BC_menu()
 			b = billcount;             // sub for a get client count 
 			for (c = 0; c < b; c++) {
 				cout << bills[c].getclname() << "\n";
-				if (bills[c].getorder() == true) {
+				if (bills[c].getorder() == true && bills[c].geteshiped() == false) {
 					cout << "Oder status:  orderd by costumer" << "\n";
 				}
-				else if (bills[c].geteshiped() == true && bills[c].getpaid() == false) {
+				else if (bills[c].geteshiped() == true ) {
 					cout << bills[c].getsaname() << "\n";
 					cout << "Oder status:  shiped to costumer" << "\n";
 					a++;
 				}
-				else if (bills[c].getpaid() == true) {
+				else if (bills[c].getpaid() == true && bills[c].getpaid() == false) {
 					cout << bills[c].getsaname() << "\n";
 					cout << "Oder status:  paid and deliverd" << "\n";
 				}
@@ -319,7 +318,7 @@ void ROBO_SHOP::BC_menu()
 				cin >> six;
 				for (c = 0; c < b; c++)
 				{
-					if (bills[c].get_ordernum() == six)
+					if ("yes" == six)
 					{
 						bills[c].updatepaid();
 						cout << bills[c].get_ordernum() << " Paid." << "\n";
@@ -346,61 +345,124 @@ void ROBO_SHOP::SA_menu()
 		two = two + x;
 		sales.push_back(two);
 		salescount++;
-	}
 
 
-	cout << "type the number next to the command you would like to perform" << "\n";
-	cout << "1: view shop open orders" << "\n";
-	cout << "2: view your open orders" << "\n";
-	cout << "3: view sales description" << "\n";
-	cin >> three;
-	if (three == "1") {
-		b = billcount;             // sub for a get client count 
-		for (c = 0; c < b; c++) {
-			cout << bills[c].getclname() << "\n";
-			if (bills[c].getorder() == true) {
-				cout << "Oder status:  orderd by costumer" << "\n";
-			}
-			bills[c].billview();
-		}
 
-		cout << "type the name of the clients hows of orders you would like to order:" << "\n";
-		cin.getline(y, 500);
-		cin.getline(y, 500);
-		six = six + y;
-		b = billcount;
-		for (c = 0; c < b; c++) {
-			if (bills[c].getclname() == six && bills[c].getshipped() == false) {
-				bills[c].set_saname(two);
-				cout << "please type in a sort sales descrip:" << "\n";
-				cin.getline(x, 500);
-				cin.getline(x, 500);
-				four = four + x;
-				cout << "please type in the date in this format (dd-mm-y):" << "\n";
-				cin.getline(y, 500);
-				cin.getline(y, 500);
-				seven = seven + y;
-				bills[c].set_date(seven);
-				cout << "please enter a order number all digits:" << "\n";
-				cin.getline(y, 500);
-				cin.getline(y, 500);
-				five = "";
-				five = five + y;
-				bills[c].set_ordernum(five);
-				bills[c].setsalesdescri(four);
-				bills[c].updateship();
-			}
-		}
-	}
-	else if (three == "2") {
-		b = billcount;             // sub for a get client count 
-		for (c = 0; c < b; c++) {
-			cout << bills[c].getclname() << "\n";
-			if (bills[c].getorder() == true) {
-				cout << "Oder status:  orderd by costumer"  << bills[c].getclname() <<"\n";
+		cout << "type the number next to the command you would like to perform" << "\n";
+		cout << "1: view shop open orders" << "\n";
+		cout << "2: view your open orders" << "\n";
+		cout << "3: view sales description" << "\n";
+		cin >> three;
+		if (three == "1") {
+			b = billcount;             // sub for a get client count 
+			for (c = 0; c < b; c++) {
+				cout << bills[c].getclname() << "\n";
+				if (bills[c].getorder() == true) {
+					cout << "Oder status:  orderd by costumer" << "\n";
+				}
 				bills[c].billview();
 			}
-			
+
+			cout << "type the name of the clients hows of orders you would like to order:" << "\n";
+			cin.getline(y, 500);
+			cin.getline(y, 500);
+			six = "";
+			six = six + y;
+			b = billcount;
+			for (c = 0; c < b; c++) {
+				if (bills[c].getclname() == six && bills[c].getshipped() == false) {
+					bills[c].set_saname(six);
+					cout << "please type in a sort sales descrip:" << "\n";
+					cin.getline(x, 500);
+					
+					four = four + x;
+					cout << "please type in the date in this format (dd-mm-y):" << "\n";
+					cin.getline(y, 500);
+					
+					seven = seven + y;
+					bills[c].set_date(seven);
+					cout << "please enter a order number all digits:" << "\n";
+					cin.getline(y, 500);
+					
+					five = "";
+					five = five + y;
+					bills[c].set_ordernum(five);
+					bills[c].setsalesdescri(four);
+					bills[c].updateship();
+				}
+			}
+		}
+		else if (three == "2") {
+			b = billcount;             // sub for a get client count 
+			for (c = 0; c < b; c++) {
+				cout << bills[c].getclname() << "\n";
+				if (bills[c].getorder() == true) {
+					cout << "Oder status:  orderd by costumer" << bills[c].getclname() << "\n";
+					bills[c].billview();
+				}
+
+			}
+
+			cout << "type the name of the clients hows of orders you would like to order:" << "\n";
+			cin.getline(y, 500);
+			cin.getline(y, 500);
+			six = six + y;
+			b = billcount;
+			for (c = 0; c < b; c++) {
+				if (bills[c].getclname() == six && bills[c].getshipped() == false) {
+					bills[c].set_saname(six);
+					cout << "please type in a sort sales descrip:" << "\n";
+					cin.getline(x, 500);
+					cin.getline(x, 500);
+					four = four + x;
+					cout << "please type in the date in this format (dd-mm-y):" << "\n";
+					cin.getline(y, 500);
+					cin.getline(y, 500);
+					two = two + y;
+					bills[c].set_date(two);
+					cout << "please enter a order number all digits:" << "\n";
+					cin.getline(y, 500);
+					cin.getline(y, 500);
+					four = four + y;
+					bills[c].set_ordernum(four);
+					bills[c].setsalesdescri(four);
+					bills[c].updateship();
+					cout << "this order has been completed" << "\n";
+
+				}
+
+
+			}
+		}
+		else if (three == "3") {
+			cout << "pleas type in your full name:" << "\n";
+			cin.getline(y, 500);
+			cin.getline(y, 500);
+			six = six + y;
+			b = salescount;
+			for (e = 0; e < b; e++) {
+				if (bills[e].getsaname() == six) {
+					bills[e].billview();
+				}
+			}
+
+		}
+
+	}
+	else if (one == "no") {
+		cout << "1: view your open orders" << "\n";
+		cout << "2: view sales description" << "\n";
+		cin >> three;
+
+	 if (three == "1") {
+		b = billcount;             // sub for a get client count 
+		for (c = 0; c < b; c++) {
+			cout << bills[c].getclname() << "\n";
+			if (bills[c].getorder() == true) {
+				cout << "Oder status:  orderd by costumer" << bills[c].getclname() << "\n";
+				bills[c].billview();
+			}
+
 		}
 
 		cout << "type the name of the clients hows of orders you would like to order:" << "\n";
@@ -434,7 +496,7 @@ void ROBO_SHOP::SA_menu()
 
 		}
 	}
-	else if (three == "3") {
+	else if (three == "2") {
 		cout << "pleas type in your full name:" << "\n";
 		cin.getline(y, 500);
 		cin.getline(y, 500);
@@ -447,6 +509,7 @@ void ROBO_SHOP::SA_menu()
 		}
 
 	}
+	}
 }
   
  
@@ -454,6 +517,25 @@ void ROBO_SHOP::SA_menu()
 
 void ROBO_SHOP::PB_menu()
 {
+	int a{0}, c = 0;
+	 int b = billcount;             // sub for a get client count 
+	for (c = 0; c < b; c++) {
+		if (bills[c].getorder() == true && bills[c].geteshiped() == false) {
+			cout << "Oder status:  orderd by costumer" << "\n";
+		}
+		else if (bills[c].geteshiped() == true && bills[c].getpaid() == false) {
+			cout << bills[c].getsaname() << "\n";
+			cout << "Oder status:  shiped to costumer" << "\n";
+			a++;
+		}
+		else if (bills[c].getpaid() == true) {
+			cout << bills[c].getsaname() << "\n";
+			cout << "Oder status:  paid and deliverd" << "\n";
+		}
+		bills[c].billview();
+	}
+	
+
 }
 
 void ROBO_SHOP::turnon() 
@@ -464,6 +546,7 @@ void ROBO_SHOP::turnon()
 	cout << "1: Product Manger widow" << "\n";
 	cout << "2: Costomor widow" << "\n";
 	cout << "3: Sales Manger widow" << "\n";
+	cout << "4: Boss Menu" << "\n";
 	cin >> ans;
 		if (ans == "1") {
 			PM_menu();
@@ -474,9 +557,14 @@ void ROBO_SHOP::turnon()
 		else if (ans == "3") {
 			SA_menu();
 		}
+		else if (ans == "4") {
+			PB_menu();
+		}  
+	 
 		cout << "pleas type in ( yes ) to continue to menu or type ( no ) to exit shop" << "\n";
 		cin >> ans2;
 	  }
+	
 }
 
 
@@ -491,3 +579,4 @@ void ROBO_SHOP::addbill(BILL x)
 	tempbill = temp;
 }
 
+ 
