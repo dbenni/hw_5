@@ -5,7 +5,7 @@
 //
 
 #include "Simple_window.h"
-
+ 
 //------------------------------------------------------------------------------
  
 Simple_window::Simple_window(Point xy, int w, int h, const string& title) :

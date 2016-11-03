@@ -8,7 +8,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Output.H>
 #include "GUI.h"
-
+ 
 namespace Graph_lib {
 
 //------------------------------------------------------------------------------

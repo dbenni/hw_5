@@ -193,6 +193,6 @@ bool BILL::geteshiped()
 	bool t;
 	t = shipped;
 	return t;
-}  
+}   
 
 
